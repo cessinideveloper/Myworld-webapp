@@ -6,4 +6,4 @@ For this we need to use [Module Federation NextJS plugin](https://www.npmjs.com/
 
 Overall it seems like a cool technology, but I wouldn't use it in any of my projects at the moment. Maybe if it comes out of the paywall I might give it another go.
 
-You can find the deployment for this POC [here](https://microfrontend-nextjs-poc.vercel.app/).
+
