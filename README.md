@@ -1,4 +1,4 @@
-# Microfrontends with Next.js and Module Federation
+# Myworld love Module Federation
 
 First came across [Microfrontends](https://micro-frontends.org/) on a Luca Mezzalira talk about the topic. It sounded very interesting on paper for big companies and I wanted to try it out.
 
