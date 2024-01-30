@@ -1,3 +1,4 @@
+import Button from 'shared/components/atoms/Button'
 export default async function Index() {
   /*
    * Replace the elements below with your own.
@@ -6,7 +7,8 @@ export default async function Index() {
    */
   return (
     <div>
-      <h1>This is Homepage</h1>
+      <h1 className='text-3xl'>This is Homepage</h1>
+      <Button/>
     </div>
   );
 }
