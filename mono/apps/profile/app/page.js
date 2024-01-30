@@ -7,7 +7,7 @@ export default async function Index() {
    */
   return (
     <div className={styles.page}>
-      <h1>This is Profile page</h1>
+      <h1>This is Profile page Note</h1>
     </div>
   );
 }
