@@ -19,6 +19,8 @@ import ExpertCard from 'shared/components/molecules/ExpertCard';
 import HubCard from 'shared/components/molecules/HubCard';
 import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption';
 import Caresoul from 'shared/components/Organism/Caresoul';
+import Livestream from 'shared/components/Organism/Livestream'
+
 export default async function Index() {
   const handleClick = () => {
     console.log('clicked');
@@ -27,7 +29,6 @@ export default async function Index() {
   return (
     <div>
       <h1 className="text-3xl">This is Homepage</h1>
-      {/* <Button /> */}
       <Button label="Follow" style={'primary'} />
       <Input hint="Enter you text" style={'default'} />
       <PopupCategory category="web development" />
@@ -52,6 +53,7 @@ export default async function Index() {
       />
 
       <Caresoul child={<TopicContentCard />} />
+      <Livestream/>
     </div>
   );
 }
