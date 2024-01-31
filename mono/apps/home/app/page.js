@@ -31,7 +31,7 @@ export default async function Index() {
       <Toast onClick={handleClick} label={'Howdy Modi'} />
       <Text label={'Schedule Hub'} style={'create-text3'} />
       <ImageButton img={'/google.png'} />
-      <FollowSuggestion imgSrc={'/ic_user_defolt_avator.svg'}/>
+      <FollowSuggestion/>
       <StreamFollowCard name={'Rajat Kumar'}/>
       <TopicContentCard/>
       <ExpertCard/>
