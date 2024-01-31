@@ -19,6 +19,10 @@ import ExpertCard from 'shared/components/molecules/ExpertCard';
 import HubCard from 'shared/components/molecules/HubCard';
 import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption';
 import Caresoul from 'shared/components/Organism/Caresoul';
+import Sidebar from 'shared/components/Organism/Sidebar';
+import Suggestion from 'shared/components/Organism/Suggestion';
+import SignUp from 'shared/components/Organism/SignUp';
+
 export default async function Index() {
   const handleClick = () => {
     console.log('clicked');
@@ -52,6 +56,18 @@ export default async function Index() {
       />
 
       <Caresoul child={<TopicContentCard />} />
+      <Sidebar
+        img={'/logo.jpg'}
+        img1={'/Homeactive.svg'}
+        img2={'/ic_create.svg'}
+        img3={'/inactive_explore.svg'}
+        img4={'/ic_inactivechat.svg'}
+        img5={'/ic_user_defolt_avator.svg'}
+        img6={'/inactive_explore.svg'}
+        img7={'/ic_more_option.svg'}
+      />
+      <Suggestion />
+      <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
     </div>
   );
 }

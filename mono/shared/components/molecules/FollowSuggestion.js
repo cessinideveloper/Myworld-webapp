@@ -7,7 +7,7 @@ import ic_user_defolt_avator from 'shared/assets/ic_user_defolt_avator.svg'
 
 const FollowSuggestion = ({imgSrc}) => {
   return (
-    <div className="flex gap-5 p-5 items-center">
+    <div className="flex gap-5 p-5 items-center w-1/3">
       <Image src={imgSrc} width={30} height={30} alt="user" />
       <div className="flex flex-col">
         <Text label="Username" style="follow-text1" />
