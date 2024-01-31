@@ -6,6 +6,7 @@ import Tag from 'shared/components/atoms/Tag';
 import Toast from 'shared/components/atoms/Toast';
 import Text from 'shared/components/atoms/Text';
 import { toast } from 'react-toastify';
+import FollowSuggestion from 'shared/components/molecules/FollowSuggestion'
 
 export default async function Index() {
   const handleClick = () => {
@@ -22,8 +23,8 @@ export default async function Index() {
       <ToggleButton/>
       <Tag label="Follow" />
       <Toast onClick={handleClick} label={'Howdy Modi'} />
-
       <Text label={'Schedule Hub'} style={'create-text3'} />
+      <FollowSuggestion/>
     </div>
   );
 }

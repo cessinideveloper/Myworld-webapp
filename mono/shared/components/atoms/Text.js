@@ -9,7 +9,7 @@ const styleClassess = {
   'signup text': 'text-[12px] font-semibold text-gray-400',
   'signup heading': 'text-[20px] font-bold',
   'follow-text1': 'text-[12px] font-bold',
-  'follow-text1': 'text-[12px] font-semibold',
+  'follow-text2': 'text-[12px] font-semibold',
   'hub-time': 'text-[10px] font-bold',
   'slider-props': 'text-[15px] font-bold',
   'slider-props2': 'text-[15px] font-bold text-blue-500',
@@ -31,5 +31,8 @@ Text.propTypes = {
   label: PropTypes.string.isRequired,
   style: PropTypes.string.isRequired,
 };
+Text.defaultProps = {
+  style: 'default'
+}
 
 export default Text;
