@@ -1,4 +1,7 @@
 import Button from 'shared/components/atoms/Button';
+import Input from 'shared/components/atoms/Input';
+import PopupCategory from 'shared/components/atoms/PopupCategory';
+import ToggleButton from 'shared/components/atoms/ToggleButton';
 import Tag from 'shared/components/atoms/Tag';
 import Toast from 'shared/components/atoms/Toast';
 import Text from 'shared/components/atoms/Text';
@@ -14,6 +17,9 @@ export default async function Index() {
       <h1 className="text-3xl">This is Homepage</h1>
       {/* <Button /> */}
       <Button label="Follow" style={'primary'} />
+      <Input hint='Enter you text' style={'default'}/>
+      <PopupCategory category='web development'/>
+      <ToggleButton/>
       <Tag label="Follow" />
       <Toast onClick={handleClick} label={'Howdy Modi'} />
 

@@ -21,13 +21,12 @@ const styleClassess = {
     'bg-black hover:bg-gray-900 text-white font-semibold px-3 py-1 rounded-full',
 };
 const Button = ({ label, disabled, style }) => {
-  const buttonClasses = `${styleClassess[style]}`;
   return (
-    <div>
-      <button disabled={disabled} className={buttonClasses}>
+    <>
+      <button disabled={disabled} className={`${styleClassess[style]}`}>
         {label}
       </button>
-    </div>
+    </>
   );
 };
 
