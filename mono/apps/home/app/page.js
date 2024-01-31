@@ -7,6 +7,12 @@ import Toast from 'shared/components/atoms/Toast';
 import Text from 'shared/components/atoms/Text';
 import ImageButton from 'shared/components/molecules/ImageButton';
 import { toast } from 'react-toastify';
+import FollowSuggestion from 'shared/components/molecules/FollowSuggestion'
+import StreamFollowCard from 'shared/components/molecules/StreamFollowCard'
+import TopicContentCard from 'shared/components/molecules/TopicContentCard'
+import ExpertCard from 'shared/components/molecules/ExpertCard'
+import HubCard from 'shared/components/molecules/HubCard'
+import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption'
 
 export default async function Index() {
   const handleClick = () => {
@@ -23,9 +29,14 @@ export default async function Index() {
       <ToggleButton />
       <Tag label="Follow" />
       <Toast onClick={handleClick} label={'Howdy Modi'} />
-
       <Text label={'Schedule Hub'} style={'create-text3'} />
       <ImageButton img={'/google.png'} />
+      <FollowSuggestion imgSrc={'/ic_user_defolt_avator.svg'}/>
+      <StreamFollowCard name={'Rajat Kumar'}/>
+      <TopicContentCard/>
+      <ExpertCard/>
+      <HubCard/>
+      <ToggleCreateOption optionTitle={'Everyone'} optionDesc={'Anyone can send you Hub join request'}/>
     </div>
   );
 }
