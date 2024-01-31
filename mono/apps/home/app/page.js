@@ -50,7 +50,8 @@ export default async function Index() {
         optionTitle={'Everyone'}
         optionDesc={'Anyone can send you Hub join request'}
       />
-      <Caresoul />
+
+      <Caresoul child={<TopicContentCard />} />
     </div>
   );
 }
