@@ -9,7 +9,7 @@ const styleClassess = {
   'signup text': 'text-[12px] font-semibold text-gray-400',
   'signup heading': 'text-[20px] font-bold',
   'follow-text1': 'text-[12px] font-bold',
-  'follow-text1': 'text-[12px] font-semibold',
+  'follow-text2': 'text-[12px] font-semibold',
   'hub-time': 'text-[10px] font-bold',
   'slider-props': 'text-[15px] font-bold',
   'slider-props2': 'text-[15px] font-bold text-blue-500',
@@ -19,9 +19,10 @@ const styleClassess = {
   'chat-head': 'text-3xl font-bold',
   'create1 room': 'text-[37px] font-bold text-gray-400',
   'create2-text': 'text-[16px] font-semibold text-gray-200',
-  'button-text': 'text-xl font-bold',
+  'button-text': 'text-lg font-bold',
   'button-text2': 'text-xl font-bold text-white',
   'create-text3': 'text-xl font-bold text-blue-400',
+  'section-following': 'text-xs font-semibold',
 };
 const Text = ({ label, style }) => {
   const textClasses = `${styleClassess[style]}`;

@@ -1,29 +1,29 @@
 import React from 'react';
 import 'globals.css';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 
 const styleClassess = {
   button:
     'bg-black hover:bg-gray-700 text-white font-semibold py-1 px-6 text-sm rounded-full',
-  disabled: 'bg-gray-500 text-white font-bold py-2 px-4 rounded-full',
+  disabled:
+    'bg-white text-white font-bold py-2 px-4 rounded-full flex gap-3 items-center border border-gray-100 text-b;ack',
   primary:
     'bg-green-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   secondary:
     'bg-gray-200 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded-full',
   success:
     'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
-  danger:
-    'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full',
-  warning:
-    'bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full',
   info: 'bg-black hover:bg-gray-700 text-white font-bold py-1 px-6 rounded-full',
   follow:
     'bg-black hover:bg-gray-900 text-white font-semibold px-3 py-1 rounded-full',
 };
-const Button = ({ label, disabled, style }) => {
+
+const Button = ({ label, disabled, style, imgSrc }) => {
   return (
     <>
       <button disabled={disabled} className={`${styleClassess[style]}`}>
+        {imgSrc && <Image src={imgSrc} alt={''} width={20} height={20} />}
         {label}
       </button>
     </>
@@ -32,6 +32,7 @@ const Button = ({ label, disabled, style }) => {
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
+  // label: PropTypes.any,
   disabled: PropTypes.bool,
   style: PropTypes.oneOf([
     'button',
