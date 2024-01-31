@@ -12,6 +12,12 @@ import MyspaceCard from 'shared/components/molecules/MyspaceCard';
 import RecommendedCard from 'shared/components/molecules/RecommendedCard';
 import EnableDiscovery from 'shared/components/molecules/EnableDiscovery';
 import { toast } from 'react-toastify';
+import FollowSuggestion from 'shared/components/molecules/FollowSuggestion'
+import StreamFollowCard from 'shared/components/molecules/StreamFollowCard'
+import TopicContentCard from 'shared/components/molecules/TopicContentCard'
+import ExpertCard from 'shared/components/molecules/ExpertCard'
+import HubCard from 'shared/components/molecules/HubCard'
+import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption'
 
 export default async function Index() {
   const handleClick = () => {
@@ -28,7 +34,6 @@ export default async function Index() {
       <ToggleButton />
       <Tag label="Follow" />
       <Toast onClick={handleClick} label={'Howdy Modi'} />
-
       <Text label={'Schedule Hub'} style={'create-text3'} />
       <ImageButton img={'/google.png'} style={'text-black'} />
       <HubSuggestion />
@@ -36,6 +41,12 @@ export default async function Index() {
       <MyspaceCard img1={'/man.jpg'} img2={'/man.jpg'} img3={'/man.jpg'} />
       <RecommendedCard img={'/s1.avif'} img1={'/man.jpg'} />
       <EnableDiscovery />
+      <FollowSuggestion/>
+      <StreamFollowCard name={'Rajat Kumar'}/>
+      <TopicContentCard/>
+      <ExpertCard/>
+      <HubCard/>
+      <ToggleCreateOption optionTitle={'Everyone'} optionDesc={'Anyone can send you Hub join request'}/>
     </div>
   );
 }

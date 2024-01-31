@@ -32,5 +32,8 @@ Text.propTypes = {
   label: PropTypes.string.isRequired,
   style: PropTypes.string.isRequired,
 };
+Text.defaultProps = {
+  style: 'default'
+}
 
 export default Text;
