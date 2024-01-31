@@ -5,7 +5,7 @@ const styleClassess = {
   heading: 'text-xl font-bold',
   'room-text': 'text-lg font-semibold',
   'dropdown-text': 'text-[17px] font-bold',
-  'sign up with google': 'text-[15px] font-bold',
+  'sign up with google': 'text-[20px] font-bold',
   'signup text': 'text-[12px] font-semibold text-gray-400',
   'signup heading': 'text-[20px] font-bold',
   'follow-text1': 'text-[12px] font-bold',
