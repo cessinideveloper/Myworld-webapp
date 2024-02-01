@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const styleClassess = {
   default: 'text-base font-normal',
   heading: 'text-xl font-bold',
-  'room-text': 'text-lg font-semibold',
+  'room-text': 'text-2xl font-bold',
   'dropdown-text': 'text-[17px] font-bold',
   'sign up with google': 'text-[16px] font-bold',
   'signup text': 'text-[12px] font-semibold text-gray-400',

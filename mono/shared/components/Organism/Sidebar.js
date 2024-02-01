@@ -26,13 +26,6 @@ const Sidebar = ({
     img6: false,
     img7: false,
   });
-
-  // const handleImageClick = (imgKey) => {
-  //   setImageState((prevState) => ({
-  //     ...Object.keys(prevState),
-  //     [imgKey]: !prevState[imgKey],
-  //   }));
-  // };
   const handleImageClick = (imgKey) => {
     setImageState((prevState) => ({
       ...Object.keys(prevState).reduce(

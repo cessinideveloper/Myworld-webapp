@@ -16,13 +16,17 @@ const styleClassess = {
     'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   info: 'bg-black hover:bg-gray-700 text-white font-bold py-1 px-6 rounded-full',
   follow:
-    'bg-black hover:bg-gray-900 text-white font-semibold px-3 py-1 rounded-full',
+    'bg-white hover:bg-gray-900 hover:text-white font-semibold border px-4 py-0 text-sm rounded-full',
 };
 
-const Button = ({ label, disabled, style, imgSrc }) => {
+const Button = ({ label, disabled, style, imgSrc, onClick }) => {
   return (
     <>
-      <button disabled={disabled} className={`${styleClassess[style]}`}>
+      <button
+        disabled={disabled}
+        className={`${styleClassess[style]}`}
+        onClick={onClick}
+      >
         {imgSrc && <Image src={imgSrc} alt={''} width={20} height={20} />}
         {label}
       </button>
@@ -34,6 +38,7 @@ Button.propTypes = {
   label: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   imgSrc: PropTypes.string,
+  onClick: PropTypes.func,
   style: PropTypes.oneOf([
     'button',
     'nothing',

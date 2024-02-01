@@ -26,6 +26,8 @@ import Suggestion from 'shared/components/Organism/Suggestion';
 import SignUp from 'shared/components/Organism/SignUp';
 // import MainSlider from 'shared/components/Organism/MainSlider';
 import DoubleCard from 'shared/components/molecules/DoubleCard';
+import LoginModal from 'shared/components/Organism/Login';
+import Popup from 'shared/components/Organism/Popup';
 
 export default async function Index() {
   const handleClick = () => {
@@ -48,7 +50,7 @@ export default async function Index() {
       <MyspaceCard img1={'/man.jpg'} img2={'/man.jpg'} img3={'/man.jpg'} />
       <RecommendedCard img={'/s1.avif'} img1={'/man.jpg'} />
       <EnableDiscovery />
-      <FollowSuggestion />
+      <FollowSuggestion label1={'User'} label2={'User Profession'} gap={"gap-5"} />
       <StreamFollowCard name={'Rajat Kumar'} />
       <TopicContentCard />
       <ExpertCard />
@@ -78,6 +80,12 @@ export default async function Index() {
       <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
       {/* <MainSlider /> */}
       <DoubleCard img1={'/i1.jpg'} img2={'/i2.jpg'} />
+      <LoginModal
+        img1={'/ic_cross_cancel_black.svg'}
+        img2={'/logo.jpg'}
+        img3={'/google.png'}
+      />
+      <Popup />
     </div>
   );
 }
