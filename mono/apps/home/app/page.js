@@ -19,11 +19,13 @@ import ExpertCard from 'shared/components/molecules/ExpertCard';
 import HubCard from 'shared/components/molecules/HubCard';
 import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption';
 import Caresoul from 'shared/components/Organism/Caresoul';
-import Livestream from 'shared/components/Organism/Livestream'
+import Livestream from 'shared/components/Organism/Livestream';
 
 import Sidebar from 'shared/components/Organism/Sidebar';
 import Suggestion from 'shared/components/Organism/Suggestion';
 import SignUp from 'shared/components/Organism/SignUp';
+// import MainSlider from 'shared/components/Organism/MainSlider';
+import DoubleCard from 'shared/components/molecules/DoubleCard';
 
 export default async function Index() {
   const handleClick = () => {
@@ -57,19 +59,25 @@ export default async function Index() {
       />
 
       <Caresoul child={<TopicContentCard />} />
-      <Livestream/>
+      <Livestream />
       <Sidebar
         img={'/logo.jpg'}
         img1={'/Homeactive.svg'}
+        img1Alt={'/Homeinactive.svg'}
         img2={'/ic_create.svg'}
         img3={'/inactive_explore.svg'}
+        img3Alt={'/ic_active_explore.svg'}
         img4={'/ic_inactivechat.svg'}
+        img4Alt={'/ic_activechat.svg'}
         img5={'/ic_user_defolt_avator.svg'}
         img6={'/inactive_explore.svg'}
+        img6Alt={'/ic_active_explore.svg'}
         img7={'/ic_more_option.svg'}
       />
       <Suggestion />
       <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
+      {/* <MainSlider /> */}
+      <DoubleCard img1={'/i1.jpg'} img2={'/i2.jpg'} />
     </div>
   );
 }
