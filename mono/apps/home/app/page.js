@@ -26,6 +26,7 @@ import Suggestion from 'shared/components/Organism/Suggestion';
 import SignUp from 'shared/components/Organism/SignUp';
 // import MainSlider from 'shared/components/Organism/MainSlider';
 import DoubleCard from 'shared/components/molecules/DoubleCard';
+import PopUp from 'shared/components/Organism/PopUp';
 
 export default async function Index() {
   const handleClick = () => {
@@ -78,6 +79,8 @@ export default async function Index() {
       <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
       {/* <MainSlider /> */}
       <DoubleCard img1={'/i1.jpg'} img2={'/i2.jpg'} />
+      {/* popup */}
+      <PopUp />
     </div>
   );
 }
