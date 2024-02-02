@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import Text from 'shared/components/atoms/Text';
 import Image from 'next/image';
 import Share from 'shared/components/molecules/Share';
-
-const Header = ({ img1, img2, img11, img12, img13, style }) => {
+import PropTypes from 'prop-types';
+const Header = ({ img1, img2, img11, img12, img13, style,headerName, styleName }) => {
   const [modal, setModal] = useState(false);
   const handleClick = () => {
     setModal(!modal);
   };
   return (
     <div className={`flex ${style} `}>
-      <Text style="signup heading" label="Home" />
+      <Text style={styleName} label={headerName}/>
       <div className="flex gap-5 relative">
         {img1 && (
           <Image src={img1} width={30} height={30} onClick={handleClick} />
@@ -26,5 +26,13 @@ const Header = ({ img1, img2, img11, img12, img13, style }) => {
     </div>
   );
 };
+
+Header.propTypes = {
+  headerName: PropTypes.string
+}
+
+Header.defaultProps = {
+  headerName: 'Header'
+}
 
 export default Header;
