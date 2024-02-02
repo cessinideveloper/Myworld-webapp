@@ -26,7 +26,7 @@ export default async function Index() {
         />
       </div>
       <div className=" absolute left-[7vw] top-0 p-4">
-        <Header />
+        <Header headerName={'Home'} styleName={'signup heading'}/>
         <Livestream />
       </div>
       <div
