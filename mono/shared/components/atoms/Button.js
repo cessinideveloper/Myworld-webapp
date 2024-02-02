@@ -5,24 +5,30 @@ import Image from 'next/image';
 
 const styleClassess = {
   button:
-    'bg-black hover:bg-gray-700 text-white font-semibold py-1 px-6 text-sm rounded-full',
-  disabled:
-    'bg-white text-white font-bold py-2 px-4 rounded-full flex gap-3 items-center border border-gray-100 text-b;ack',
+    'bg-black hover:bg-gray-700 text-white font-semibold px-4 py-2 text-sm rounded-full',
+  btnInactive:
+    ' bg-[#efefef] text-[#7f7f7f] hover:bg-gray-700 font-semibold px-4 py-2 text-sm rounded-full',
+  nothing:
+    'bg-white text-white font-bold py-2 px-4 rounded-full flex gap-3 items-center border border-gray-100 text-black',
   primary:
-    'bg-green-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
+    'bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   secondary:
     'bg-gray-200 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded-full',
   success:
     'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   info: 'bg-black hover:bg-gray-700 text-white font-bold py-1 px-6 rounded-full',
   follow:
-    'bg-black hover:bg-gray-900 text-white font-semibold px-3 py-1 rounded-full',
+    'bg-white hover:bg-gray-900 hover:text-white font-semibold border px-4 py-0 text-sm rounded-full',
 };
 
-const Button = ({ label, disabled, style, imgSrc }) => {
+const Button = ({ label, disabled, style, imgSrc, onClick }) => {
   return (
     <>
-      <button disabled={disabled} className={`${styleClassess[style]}`}>
+      <button
+        disabled={disabled}
+        className={`${styleClassess[style]}`}
+        onClick={onClick}
+      >
         {imgSrc && <Image src={imgSrc} alt={''} width={20} height={20} />}
         {label}
       </button>
@@ -32,11 +38,12 @@ const Button = ({ label, disabled, style, imgSrc }) => {
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
-  // label: PropTypes.any,
   disabled: PropTypes.bool,
+  imgSrc: PropTypes.string,
+  onClick: PropTypes.func,
   style: PropTypes.oneOf([
     'button',
-    'disabled',
+    'nothing',
     'primary',
     'secondary',
     'success',
