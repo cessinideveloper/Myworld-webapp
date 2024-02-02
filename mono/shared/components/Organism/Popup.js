@@ -42,6 +42,22 @@ const Popup = () => {
   const [popup2, setPopup2] = useState(false);
   const [popup3, setPopup3] = useState(false);
   const [Modal, setModal] = useState(true);
+  const [selectedTech, setSelectedTech] = useState([]);
+  const [selectedHealth, setSelectedHealth] = useState([]);
+  const handleSelectTech = (item, isChecked) => {
+    if (isChecked) {
+      setSelectedTech([...selectedTech, item]);
+    } else {
+      setSelectedTech(selectedTech.filter((i) => i.index !== item.index));
+    }
+  };
+  const handleSelectHealth = (item, isChecked) => {
+    if (isChecked) {
+      setSelectedHealth([...selectedHealth, item]);
+    } else {
+      setSelectedHealth(selectedHealth.filter((i) => i.index !== item.index));
+    }
+  };
   const handleClick = () => {
     if (popup1) {
       setPopup1(false);
@@ -80,12 +96,26 @@ const Popup = () => {
                 <div className="flex flex-col items-start justify-start gap-5 pb-2 mt-3 scroll-x">
                   <div className="flex whitespace-nowrap gap-x-3 gap-y-4">
                     {row1.map((item, index) => (
-                      <PopupCategory category={item} key={index} />
+                      <div
+                        onChange={(e) =>
+                          handleSelectTech(item, e.target.checked)
+                        }
+                        checked={selectedTech.includes(item)}
+                      >
+                        <PopupCategory category={item} key={index} />
+                      </div>
                     ))}
                   </div>
                   <div className="flex items-center justify-start whitespace-nowrap gap-x-3 gap-y-4">
                     {row2.map((item, index) => (
-                      <PopupCategory category={item} key={index} />
+                      <div
+                        onChange={(e) =>
+                          handleSelectTech(item, e.target.checked)
+                        }
+                        checked={selectedTech.includes(item)}
+                      >
+                        <PopupCategory category={item} key={index} />
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -95,12 +125,26 @@ const Popup = () => {
                 <div className="flex flex-col items-start justify-start gap-5 pb-2 mt-3 scroll-x">
                   <div className="flex whitespace-nowrap gap-x-3 gap-y-4">
                     {row1health.map((item, index) => (
-                      <PopupCategory category={item} key={index} />
+                      <div
+                        onChange={(e) =>
+                          handleSelectHealth(item, e.target.checked)
+                        }
+                        checked={selectedHealth.includes(item)}
+                      >
+                        <PopupCategory category={item} key={index} />
+                      </div>
                     ))}
                   </div>
                   <div className="flex items-center justify-start whitespace-nowrap gap-x-3 gap-y-4">
                     {row2health.map((item, index) => (
-                      <PopupCategory category={item} key={index} />
+                      <div
+                        onChange={(e) =>
+                          handleSelectHealth(item, e.target.checked)
+                        }
+                        checked={selectedHealth.includes(item)}
+                      >
+                        <PopupCategory category={item} key={index} />
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -161,7 +205,14 @@ const Popup = () => {
               </div>
             )}
 
-            <Button label="Next" className="w-full " onClick={handleClick} />
+            <Button
+              label="Next"
+              className="w-full"
+              onClick={handleClick}
+              // disabled={
+              //   selectedTech.length === 0 || selectedHealth.length === 0
+              // }
+            />
           </div>
         </div>
       )}

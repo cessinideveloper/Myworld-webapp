@@ -6,10 +6,12 @@ import Image from 'next/image';
 const styleClassess = {
   button:
     'bg-black hover:bg-gray-700 text-white font-semibold px-4 py-2 text-sm rounded-full',
+  btnInactive:
+    ' bg-[#efefef] text-[#7f7f7f] hover:bg-gray-700 font-semibold px-4 py-2 text-sm rounded-full',
   nothing:
-    'bg-white text-white font-bold py-2 px-4 rounded-full flex gap-3 items-center border border-gray-100 text-b;ack',
+    'bg-white text-white font-bold py-2 px-4 rounded-full flex gap-3 items-center border border-gray-100 text-black',
   primary:
-    'bg-green-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
+    'bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   secondary:
     'bg-gray-200 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded-full',
   success:

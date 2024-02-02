@@ -28,16 +28,16 @@ import SignUp from 'shared/components/Organism/SignUp';
 import DoubleCard from 'shared/components/molecules/DoubleCard';
 import PopUp from 'shared/components/Organism/PopUp';
 import LoginModal from 'shared/components/Organism/Login';
-
+import Header from 'shared/components/molecules/Header';
 
 export default async function Index() {
-  const handleClick = () => {
-    console.log('clicked');
-    toast.success('Successfully clicked');
-  };
+  // const handleClick = () => {
+  //   console.log('clicked');
+  //   toast.success('Successfully clicked');
+  // };
   return (
-    <div>
-      <h1 className="text-3xl">This is Homepage</h1>
+    <div className="relative">
+      {/* <h1 className="text-3xl">This is Homepage</h1>
       <Button label="Follow" style={'primary'} />
       <Input hint="Enter you text" style={'default'} />
       <PopupCategory category="web development" />
@@ -62,33 +62,46 @@ export default async function Index() {
       />
 
       <Caresoul child={<TopicContentCard />} />
-      <Livestream />
-      <Sidebar
-        img={'/logo.jpg'}
-        img1={'/Homeactive.svg'}
-        img1Alt={'/Homeinactive.svg'}
-        img2={'/ic_create.svg'}
-        img3={'/inactive_explore.svg'}
-        img3Alt={'/ic_active_explore.svg'}
-        img4={'/ic_inactivechat.svg'}
-        img4Alt={'/ic_activechat.svg'}
-        img5={'/ic_user_defolt_avator.svg'}
-        img6={'/inactive_explore.svg'}
-        img6Alt={'/ic_active_explore.svg'}
-        img7={'/ic_more_option.svg'}
-      />
-      <Suggestion />
+      <Livestream /> */}
+      <div className=" fixed left-0 top-0 h-full ">
+        <Sidebar
+          img={'/logo.jpg'}
+          img1={'/Homeactive.svg'}
+          img1Alt={'/Homeinactive.svg'}
+          img2={'/ic_create.svg'}
+          img3={'/inactive_explore.svg'}
+          img3Alt={'/ic_active_explore.svg'}
+          img4={'/ic_inactivechat.svg'}
+          img4Alt={'/ic_activechat.svg'}
+          img5={'/ic_user_defolt_avator.svg'}
+          img6={'/inactive_explore.svg'}
+          img6Alt={'/ic_active_explore.svg'}
+          img7={'/ic_more_option.svg'}
+        />
+      </div>
+      <div className=" absolute left-[7vw] top-0 p-4">
+        <Header />
+        <Livestream />
+      </div>
+      <div
+        className=" absolute right-0 top-3 w-[25vw] flex flex-wrap gap-6 border-l mr-3 pl-3
+      "
+      >
+        <Input hint="Enter you text" style={'home'} />
+        <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
+        <Suggestion name={'Rajat Kumar'} imgSrc={'/i2.jpg'} />
+      </div>
+      {/* <Suggestion />
       <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
-      {/* <MainSlider /> */}
+      
       <DoubleCard img1={'/i1.jpg'} img2={'/i2.jpg'} />
-      {/* popup */}
+      
       <PopUp />
       <LoginModal
         img1={'/ic_cross_cancel_black.svg'}
         img2={'/logo.jpg'}
         img3={'/google.png'}
-      />
-      
+      /> */}
     </div>
   );
 }

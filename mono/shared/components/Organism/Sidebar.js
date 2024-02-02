@@ -41,7 +41,7 @@ const Sidebar = ({
     setMenu(!menu);
   };
   return (
-    <div className="flex flex-col gap-12 w-[7vw] items-center border py-7 relative">
+    <div className=" flex flex-col gap-12 w-[7vw] h-screen items-center border-r py-7 relative">
       <div>
         <Image
           src={img}
@@ -99,7 +99,7 @@ const Sidebar = ({
           width={100}
           height={200}
           className=" w-6 h-6"
-          onClick={() => handleImageClick('img7')}
+          onClick={handleClick}
         />
       </div>
       <div>
@@ -109,7 +109,6 @@ const Sidebar = ({
           width={100}
           height={200}
           className="rounded-full w-12 h-12 mt-4"
-          onClick={handleClick}
         />
         {menu && (
           <div className="bg-white rounded-xl w-[15vw] flex flex-col gap-2 justify-center  p-2 border border-gray-400 absolute bottom-12 left-24">

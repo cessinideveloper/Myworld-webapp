@@ -4,11 +4,11 @@ import FollowSuggestion from 'shared/components/molecules/FollowSuggestion';
 import HubSuggetion from 'shared/components/molecules/HubSuggetion';
 const Suggestion = () => {
   return (
-    <div className=" border w-1/4 p-2 rounded-xl">
+    <div className=" border w-[100%] p-2 rounded-xl">
       <Text label="Voice You may follow" style="signup heading" />
-      <FollowSuggestion />
-      <FollowSuggestion />
-      <FollowSuggestion />
+      <FollowSuggestion label1={"User"} label2={"User Profession"} gap={"gap-16"} />
+      <FollowSuggestion label1={"User"} label2={"User Profession"} gap={"gap-16"} />
+      <FollowSuggestion label1={"User"} label2={"User Profession"} gap={"gap-16"} />
       <HubSuggetion />
     </div>
   );

@@ -4,7 +4,7 @@ import Button from 'shared/components/atoms/Button';
 import ImageButton from 'shared/components/molecules/ImageButton';
 const SignUp = ({ img, txt }) => {
   return (
-    <div className="w-1/4 border px-2 py-5 flex flex-col gap-2 rounded-xl">
+    <div className="w-[100%] border px-2 py-5 flex flex-col gap-2 rounded-xl">
       <Text style="signup heading" label="New to Myworld?" />
       <Text
         style="signup text"
