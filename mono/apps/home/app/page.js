@@ -19,7 +19,10 @@ import ExpertCard from 'shared/components/molecules/ExpertCard';
 import HubCard from 'shared/components/molecules/HubCard';
 import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption';
 import Caresoul from 'shared/components/Organism/Caresoul';
-import Livestream from 'shared/components/Organism/Livestream'
+import Livestream from 'shared/components/Organism/Livestream';
+import TabLayout from 'shared/components/Organism/TabLayout';
+import MainSlider from 'shared/components/Organism/MainSlider';
+import {tabsData, tabsContent} from 'shared/model/TabLayoutData';
 
 export default async function Index() {
   const handleClick = () => {
@@ -54,6 +57,8 @@ export default async function Index() {
 
       <Caresoul child={<TopicContentCard />} />
       <Livestream/>
+      <TabLayout tabs={tabsData} tabContent={tabsContent}/>
+      <MainSlider/>
     </div>
   );
 }
