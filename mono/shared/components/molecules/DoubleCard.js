@@ -7,14 +7,14 @@ const DoubleCard = ({ img1, img2 }) => {
       <div className="p-2 gap-1 border-2 border-red-400 rounded-full justify-center inline-flex">
         <Image
           src={img1}
-          width={10}
-          height={10}
+          width={100}
+          height={100}
           className="w-20 h-20 rounded-full object-cover"
         />
         <Image
           src={img2}
-          width={10}
-          height={10}
+          width={100}
+          height={100}
           className="w-20 h-20 rounded-full object-cover"
         />
       </div>

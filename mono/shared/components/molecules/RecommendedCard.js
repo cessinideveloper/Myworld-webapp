@@ -4,14 +4,17 @@ import Image from 'next/image';
 import Text from 'shared/components/atoms/Text';
 const RecommendedCard = ({ img, img1 }) => {
   return (
-    <div className='relative'>
-      <Image
-        src={img}
-        width={200}
-        height={400}
-        alt="img"
-        className=" w-[200px] h-[250px] rounded-lg"
-      />
+    <div className="relative">
+      <div className='w-[300px] h-[400px]'>
+        <Image
+          src={img}
+          width={200}
+          height={400}
+          alt="img"
+          className=" w-full h-full rounded-lg"
+        />
+      </div>
+
       <div className="flex gap-1 absolute left-3 bottom-10 z-10">
         <Image
           src={img1}
@@ -25,7 +28,7 @@ const RecommendedCard = ({ img, img1 }) => {
   );
 };
 
-RecommendedCard.PropTypes = {
+RecommendedCard.propTypes = {
   img: PropTypes.string.isRequired,
   img1: PropTypes.string.isRequired,
 };

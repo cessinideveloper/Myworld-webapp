@@ -43,10 +43,16 @@ const MyspaceCard = ({ img1, img2, img3 }) => {
     </div>
   );
 };
-MyspaceCard.PropTypes = {
+MyspaceCard.propTypes = {
   img1: PropTypes.string.isRequired,
   img2: PropTypes.string.isRequired,
   img3: PropTypes.string.isRequired,
 };
+
+MyspaceCard.defaultProps = {
+  img1: '',
+  img2: '',
+  img3: '',
+}
 
 export default MyspaceCard;

@@ -8,8 +8,8 @@ import ic_user_defolt_avator from 'shared/assets/ic_user_defolt_avator.svg';
 const ExpertCard = ({ imgSrc, expertName }) => {
   return (
     <div className="w-[200px] h-fit py-5 flex flex-col items-center gap-3">
-      <div className="rounded-full">
-        <Image src={imgSrc} width={150} height={150} alt="expert" />
+      <div>
+        <Image src={imgSrc} width={150} height={150} alt="expert" className='rounded-full'/>
       </div>
       <div>
         <Text label={expertName} style="slider-props" />
@@ -21,7 +21,7 @@ const ExpertCard = ({ imgSrc, expertName }) => {
 };
 
 ExpertCard.propTypes = {
-  imgSrc: PropTypes.string,
+  imgSrc: PropTypes.any,
   expertName: PropTypes.string
 };
 

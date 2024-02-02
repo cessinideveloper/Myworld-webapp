@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import { sliderData } from 'shared/model/MainSliderData';
+import { sliderData } from 'shared/model/MainSliderDummyData';
 import backarrowright from 'shared/assets/backarrowright.svg';
 import Image from 'next/image';
 
@@ -33,8 +33,8 @@ const MainSlider = () => {
         >
           {sliderData.map((data) => {
             return (
-              <div className="bg-blue-500 border-[12px] border-white rounded-3xl min-w-[600px] h-[400px] overflow-hidden">
-                {data}
+              <div key={data.id} className="border-[12px] border-white rounded-[75px] min-w-[600px] h-[400px] overflow-hidden">
+                <Image src={data.imgSrc} width={600} height={400} alt='slider image'/>
               </div>
             );
           })}

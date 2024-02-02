@@ -8,6 +8,9 @@ import TopicContentCard from 'shared/components/molecules/TopicContentCard';
 import MyspaceCard from 'shared/components/molecules/MyspaceCard';
 import ExpertCard from 'shared/components/molecules/ExpertCard';
 import RecommendedCard from 'shared/components/molecules/RecommendedCard';
+import pic1 from 'shared/assets/ExploreDummyData/profilepic.jpg';
+import pic2 from 'shared/assets/ExploreDummyData/profilepic2.jpg';
+import reel1 from 'shared/assets/ExploreDummyData/reel1.jpg';
 
 export default async function Index() {
   return (
@@ -28,23 +31,23 @@ export default async function Index() {
         </div>
         <div className="px-20 w-full space-y-9">
           <div>
-            <CardCarousel child={<DoubleCard />} />
+            <CardCarousel child={<DoubleCard img1={pic1} img2={pic2}/>} />
           </div>
           <div className='space-y-5'>
-            <SectionTag tagTitle={'Holo_Layla'} num={223} numType={'views'}/>
-            <CardCarousel child={<TopicContentCard />} />
+            <SectionTag tagTitle={'Holo_Layla'} num={223} numType={'view'}/>
+            <CardCarousel child={<TopicContentCard img={reel1}/>} />
           </div>
           <div className='space-y-5'>
             <SectionTag tagTitle={'Upcoming mySpace'} num={123} numType={'follow'}/>
-            <CardCarousel child={<MyspaceCard/>} />
+            <CardCarousel child={<MyspaceCard img1={pic1} img2={pic2} img3={pic1}/>} />
           </div>
           <div className='space-y-5'>
             <SectionTag tagTitle={'Top Experts'} num={123} numType={'follow'}/>
-            <CardCarousel child={<ExpertCard/>} />
+            <CardCarousel child={<ExpertCard imgSrc={pic1}/>} />
           </div>
           <div className='space-y-5'>
             <SectionTag tagTitle={'Made for you'} num={123} numType={'video'}/>
-            <CardCarousel child={<RecommendedCard/>} />
+            <CardCarousel child={<RecommendedCard img={reel1} img1={pic1}/>} />
           </div>
         </div>
       </div>
