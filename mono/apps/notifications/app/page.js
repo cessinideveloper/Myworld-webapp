@@ -1,13 +1,12 @@
-import styles from './page.module.css';
+import Sidebar from 'shared/components/Organism/Sidebar';
 export default async function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
   return (
-    <div className={styles.page}>
-      <h1>This is Notifications page</h1>
+    <div>
+      {/* <p>This is from practice page</p>
+      <EnterConversation /> */}
+      <div className=" fixed left-0 top-0 h-full z-[-1]">
+        <Sidebar />
+      </div>
     </div>
   );
 }

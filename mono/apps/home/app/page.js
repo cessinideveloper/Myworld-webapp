@@ -63,28 +63,18 @@ export default async function Index() {
 
       <Caresoul child={<TopicContentCard />} />
       <Livestream /> */}
-      <div className=" fixed left-0 top-0 h-full ">
-        <Sidebar
-          img={'/logo.jpg'}
-          img1={'/Homeactive.svg'}
-          img1Alt={'/Homeinactive.svg'}
-          img2={'/ic_create.svg'}
-          img3={'/inactive_explore.svg'}
-          img3Alt={'/ic_active_explore.svg'}
-          img4={'/ic_inactivechat.svg'}
-          img4Alt={'/ic_activechat.svg'}
-          img5={'/ic_user_defolt_avator.svg'}
-          img6={'/inactive_explore.svg'}
-          img6Alt={'/ic_active_explore.svg'}
-          img7={'/ic_more_option.svg'}
-        />
+      <div className="z-[100]">
+        <PopUp />
       </div>
-      <div className=" absolute left-[7vw] top-0 p-4">
+      <div className=" fixed left-0 top-0 h-full z-[-1]">
+        <Sidebar />
+      </div>
+      <div className=" absolute left-[7vw] top-0 p-4  z-[-1]">
         <Header />
         <Livestream />
       </div>
       <div
-        className=" absolute right-0 top-3 w-[25vw] flex flex-wrap gap-6 border-l mr-3 pl-3
+        className=" absolute right-0 top-3 w-[25vw] flex flex-wrap gap-6 border-l mr-3 pl-3  z-[-1]
       "
       >
         <Input hint="Enter you text" style={'home'} />
