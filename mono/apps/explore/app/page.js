@@ -1,13 +1,53 @@
-import styles from './page.module.css';
+import Header from 'shared/components/molecules/Header';
+import Input from 'shared/components/atoms/Input';
+import MainSlider from 'shared/components/Organism/MainSlider';
+import CardCarousel from 'shared/components/Organism/CardCarousel';
+import DoubleCard from 'shared/components/molecules/DoubleCard';
+import SectionTag from 'shared/components/molecules/Sectiontag';
+import TopicContentCard from 'shared/components/molecules/TopicContentCard';
+import MyspaceCard from 'shared/components/molecules/MyspaceCard';
+import ExpertCard from 'shared/components/molecules/ExpertCard';
+import RecommendedCard from 'shared/components/molecules/RecommendedCard';
+
 export default async function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
   return (
-    <div className={styles.page}>
-      <h1>This is explore page</h1>
+    <div className="flex">
+      <div className="bg-gray-500 w-[10vw] fixed h-screen">For sidebar</div>
+      <div className="flex flex-col w-[90vw] ml-[10vw] overflow-y-hidden gap-10 mb-10">
+        <div className="flex w-full px-5 py-5">
+          <div className="w-[10%]">
+            <Header styleName={'signup heading'} headerName={'Explore'} />
+          </div>
+          <div className="w-[80%]">
+            <Input style={'explore'} hint="Search Rooms, Experts..." />
+          </div>
+          <div className="w-[10%]">For Icons</div>
+        </div>
+        <div>
+          <MainSlider />
+        </div>
+        <div className="px-20 w-full space-y-9">
+          <div>
+            <CardCarousel child={<DoubleCard />} />
+          </div>
+          <div className='space-y-5'>
+            <SectionTag tagTitle={'Holo_Layla'} num={223} numType={'views'}/>
+            <CardCarousel child={<TopicContentCard />} />
+          </div>
+          <div className='space-y-5'>
+            <SectionTag tagTitle={'Upcoming mySpace'} num={123} numType={'follow'}/>
+            <CardCarousel child={<MyspaceCard/>} />
+          </div>
+          <div className='space-y-5'>
+            <SectionTag tagTitle={'Top Experts'} num={123} numType={'follow'}/>
+            <CardCarousel child={<ExpertCard/>} />
+          </div>
+          <div className='space-y-5'>
+            <SectionTag tagTitle={'Made for you'} num={123} numType={'video'}/>
+            <CardCarousel child={<RecommendedCard/>} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
