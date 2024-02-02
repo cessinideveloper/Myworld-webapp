@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 const styleClassess = {
   default:
-    'bg-gray-100 border-[1px] border-gray-500 px-3 py-2 rounded-full cursor-pointer w-fit text-gray-500',
+    'bg-gray-100 border-[1px] border-gray-500 px-5 py-[2px] rounded-full cursor-pointer w-fit text-gray-500',
   select:
-    'bg-blue-300 border-[1px] border-blue-600 px-3 py-2 rounded-full cursor-pointer w-fit text-blue-800',
+    'bg-blue-500 border-[1px] border-blue-600 px-5 py-[2px] rounded-full cursor-pointer w-fit text-white',
 };
 
 const PopupCategory = ({ category }) => {

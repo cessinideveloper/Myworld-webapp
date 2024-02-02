@@ -20,18 +20,24 @@ import HubCard from 'shared/components/molecules/HubCard';
 import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption';
 import Caresoul from 'shared/components/Organism/Caresoul';
 import Livestream from 'shared/components/Organism/Livestream';
-import TabLayout from 'shared/components/Organism/TabLayout';
-import MainSlider from 'shared/components/Organism/MainSlider';
-import {tabsData, tabsContent} from 'shared/model/TabLayoutData';
+
+import Sidebar from 'shared/components/Organism/Sidebar';
+import Suggestion from 'shared/components/Organism/Suggestion';
+import SignUp from 'shared/components/Organism/SignUp';
+// import MainSlider from 'shared/components/Organism/MainSlider';
+import DoubleCard from 'shared/components/molecules/DoubleCard';
+import PopUp from 'shared/components/Organism/PopUp';
+import LoginModal from 'shared/components/Organism/Login';
+import Header from 'shared/components/molecules/Header';
 
 export default async function Index() {
-  const handleClick = () => {
-    console.log('clicked');
-    toast.success('Successfully clicked');
-  };
+  // const handleClick = () => {
+  //   console.log('clicked');
+  //   toast.success('Successfully clicked');
+  // };
   return (
-    <div>
-      <h1 className="text-3xl">This is Homepage</h1>
+    <div className="relative">
+      {/* <h1 className="text-3xl">This is Homepage</h1>
       <Button label="Follow" style={'primary'} />
       <Input hint="Enter you text" style={'default'} />
       <PopupCategory category="web development" />
@@ -45,7 +51,7 @@ export default async function Index() {
       <MyspaceCard img1={'/man.jpg'} img2={'/man.jpg'} img3={'/man.jpg'} />
       <RecommendedCard img={'/s1.avif'} img1={'/man.jpg'} />
       <EnableDiscovery />
-      <FollowSuggestion />
+      <FollowSuggestion label1={'User'} label2={'User Profession'} gap={"gap-5"} />
       <StreamFollowCard name={'Rajat Kumar'} />
       <TopicContentCard />
       <ExpertCard />
@@ -56,9 +62,46 @@ export default async function Index() {
       />
 
       <Caresoul child={<TopicContentCard />} />
-      <Livestream/>
-      <TabLayout tabs={tabsData} tabContent={tabsContent}/>
-      <MainSlider/>
+      <Livestream /> */}
+      <div className=" fixed left-0 top-0 h-full ">
+        <Sidebar
+          img={'/logo.jpg'}
+          img1={'/Homeactive.svg'}
+          img1Alt={'/Homeinactive.svg'}
+          img2={'/ic_create.svg'}
+          img3={'/inactive_explore.svg'}
+          img3Alt={'/ic_active_explore.svg'}
+          img4={'/ic_inactivechat.svg'}
+          img4Alt={'/ic_activechat.svg'}
+          img5={'/ic_user_defolt_avator.svg'}
+          img6={'/inactive_explore.svg'}
+          img6Alt={'/ic_active_explore.svg'}
+          img7={'/ic_more_option.svg'}
+        />
+      </div>
+      <div className=" absolute left-[7vw] top-0 p-4">
+        <Header />
+        <Livestream />
+      </div>
+      <div
+        className=" absolute right-0 top-3 w-[25vw] flex flex-wrap gap-6 border-l mr-3 pl-3
+      "
+      >
+        <Input hint="Enter you text" style={'home'} />
+        <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
+        <Suggestion name={'Rajat Kumar'} imgSrc={'/i2.jpg'} />
+      </div>
+      {/* <Suggestion />
+      <SignUp img={'/google.png'} txt={'Signup with phone or email'} />
+      
+      <DoubleCard img1={'/i1.jpg'} img2={'/i2.jpg'} />
+      
+      <PopUp />
+      <LoginModal
+        img1={'/ic_cross_cancel_black.svg'}
+        img2={'/logo.jpg'}
+        img3={'/google.png'}
+      /> */}
     </div>
   );
 }
