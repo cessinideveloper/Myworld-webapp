@@ -18,7 +18,7 @@ import TopicContentCard from 'shared/components/molecules/TopicContentCard';
 import ExpertCard from 'shared/components/molecules/ExpertCard';
 import HubCard from 'shared/components/molecules/HubCard';
 import ToggleCreateOption from 'shared/components/molecules/ToggleCreateOption';
-import Caresoul from 'shared/components/Organism/Caresoul';
+import CardCarousel from 'shared/components/Organism/CardCarousel'
 export default async function Index() {
   const handleClick = () => {
     console.log('clicked');
@@ -50,8 +50,7 @@ export default async function Index() {
         optionTitle={'Everyone'}
         optionDesc={'Anyone can send you Hub join request'}
       />
-
-      <Caresoul child={<TopicContentCard />} />
+      <CardCarousel child={<TopicContentCard/>}/>
     </div>
   );
 }
