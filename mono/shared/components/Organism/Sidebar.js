@@ -36,7 +36,7 @@ const Sidebar = () => {
     setMenu(!menu);
   };
   return (
-    <div className=" flex flex-col gap-12 w-[7vw] h-screen items-center border-r py-7 relative">
+    <div className=" flex flex-col gap-12 w-[7vw] h-screen fixed items-center border-r py-7">
       <div>
         <Image
           src={Profile}

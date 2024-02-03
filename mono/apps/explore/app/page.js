@@ -8,6 +8,7 @@ import TopicContentCard from 'shared/components/molecules/TopicContentCard';
 import MyspaceCard from 'shared/components/molecules/MyspaceCard';
 import ExpertCard from 'shared/components/molecules/ExpertCard';
 import RecommendedCard from 'shared/components/molecules/RecommendedCard';
+import Sidebar from 'shared/components/Organism/Sidebar';
 import pic1 from 'shared/assets/ExploreDummyData/profilepic.jpg';
 import pic2 from 'shared/assets/ExploreDummyData/profilepic2.jpg';
 import reel1 from 'shared/assets/ExploreDummyData/reel1.jpg';
@@ -15,7 +16,7 @@ import reel1 from 'shared/assets/ExploreDummyData/reel1.jpg';
 export default async function Index() {
   return (
     <div className="flex">
-      <div className="bg-gray-500 w-[10vw] fixed h-screen">For sidebar</div>
+      <Sidebar/>
       <div className="flex flex-col w-[90vw] ml-[10vw] overflow-y-hidden gap-10 mb-10">
         <div className="flex w-full px-5 py-5">
           <div className="w-[10%]">
