@@ -1,4 +1,4 @@
-import Input from 'shared/components/atoms/Input';
+import InputSearch from 'shared/components/molecules/InputSearch'
 import SignUp from 'shared/components/Organism/SignUp';
 import Tag from 'shared/components/atoms/Tag';
 import Text from 'shared/components/atoms/Text';
@@ -12,7 +12,7 @@ export default async function Index() {
        <Sidebar/>
       </div>
       <div className=" absolute left-[7vw] top-0 p-4">
-        <Input hint="Search room, experts" style={'home'} />
+        <InputSearch imgSrc={'/ic_searchactive.svg'} label={"Search room, experts"}/>
         <TabLayout tabs={searchTabData} tabContent={searchTabContent}/>
       </div>
       <div
