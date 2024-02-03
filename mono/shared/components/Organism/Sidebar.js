@@ -2,22 +2,17 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Text from 'shared/components/atoms/Text';
-const Sidebar = ({
-  img,
-  img1,
-  img1Alt,
-  img2,
-  img3,
-  img3Alt,
-  img4,
-  img4Alt,
-  img5,
-  img5Alt,
-  img6,
-  img6Alt,
-  img7,
-  img7Alt,
-}) => {
+import Profile from '../../assets/ic_user_defolt_avator.svg';
+import HomeActive from '../../assets/Homeactive.svg';
+import HomeInactive from '../../assets/Homeinactive.svg';
+import ExploreActive from '../../assets/ic_active_explore.svg';
+import ExploreInactive from '../../assets/inactive_explore.svg';
+import ChatActive from '../../assets/ic_activechat.svg';
+import ChatInactive from '../../assets/ic_inactivechat.svg';
+import MoreOption from '../../assets/ic_more_option.svg';
+import Create from '../../assets/ic_create.svg';
+
+const Sidebar = () => {
   const [imageState, setImageState] = useState({
     img1: false,
     img3: false,
@@ -41,10 +36,10 @@ const Sidebar = ({
     setMenu(!menu);
   };
   return (
-    <div className=" flex flex-col gap-12 w-[7vw] h-screen items-center border-r py-7 relative">
+    <div className=" flex flex-col gap-12 w-[7vw] h-screen fixed items-center border-r py-7">
       <div>
         <Image
-          src={img}
+          src={Profile}
           alt="Image"
           width={100}
           height={200}
@@ -53,7 +48,7 @@ const Sidebar = ({
       </div>
       <div className="flex flex-col gap-6 ">
         <Image
-          src={imageState.img1 ? img1 : img1Alt}
+          src={imageState.img1 ? HomeActive : HomeInactive}
           alt="Image"
           width={100}
           height={200}
@@ -61,7 +56,7 @@ const Sidebar = ({
           onClick={() => handleImageClick('img1')}
         />
         <Image
-          src={imageState.img6 ? img6Alt : img6}
+          src={imageState.img6 ? ExploreActive : ExploreInactive}
           alt="Image"
           width={100}
           height={200}
@@ -70,7 +65,7 @@ const Sidebar = ({
         />
 
         <Image
-          src={imageState.img4 ? img4Alt : img4}
+          src={imageState.img4 ? ChatActive : ChatInactive}
           alt="Image"
           width={100}
           height={200}
@@ -78,7 +73,7 @@ const Sidebar = ({
           onClick={() => handleImageClick('img4')}
         />
         <Image
-          src={imageState.img3 ? img3Alt : img3}
+          src={Profile}
           alt="Image"
           width={100}
           height={200}
@@ -86,7 +81,7 @@ const Sidebar = ({
           onClick={() => handleImageClick('img3')}
         />
         <Image
-          src={imageState.img5 ? img5Alt : img5}
+          src={Profile}
           alt="Image"
           width={100}
           height={200}
@@ -94,7 +89,7 @@ const Sidebar = ({
           onClick={() => handleImageClick('img5')}
         />
         <Image
-          src={imageState.img7 ? img7Alt : img7}
+          src={MoreOption}
           alt="Image"
           width={100}
           height={200}
@@ -104,7 +99,7 @@ const Sidebar = ({
       </div>
       <div>
         <Image
-          src={img2}
+          src={Create}
           alt="Image"
           width={100}
           height={200}

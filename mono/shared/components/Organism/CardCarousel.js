@@ -24,7 +24,7 @@ const SliderComponent = ({child}) => {
         <div key={slide.img} className='mr-8'>{child}</div>
       ))}
       </div>
-      <Image src={backarrowright} height={30} width={30} onClick={handleRightButtonClick} alt='Next arrow' className='absolute top-0 right-0 mt-40'/>
+      <Image src={backarrowright} height={40} width={40} onClick={handleRightButtonClick} alt='Next arrow' className='absolute top-1/2 right-0 z-10 cursor-pointer bg-gray-300 rounded-full p-2'/>
     </div>
     </>
   );

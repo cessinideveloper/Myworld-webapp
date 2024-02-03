@@ -13,7 +13,7 @@ const styleClassess = {
   primary:
     'bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   secondary:
-    'bg-gray-200 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded-full',
+    'bg-gray-200 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded-full w-fit',
   success:
     'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   info: 'bg-black hover:bg-gray-700 text-white font-bold py-1 px-6 rounded-full',

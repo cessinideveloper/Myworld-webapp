@@ -1,4 +1,3 @@
-
 import Button from 'shared/components/atoms/Button';
 import Input from 'shared/components/atoms/Input';
 import PopupCategory from 'shared/components/atoms/PopupCategory';
@@ -29,6 +28,8 @@ import SignUp from 'shared/components/Organism/SignUp';
 import DoubleCard from 'shared/components/molecules/DoubleCard';
 import PopUp from 'shared/components/Organism/PopUp';
 import LoginModal from 'shared/components/Organism/Login';
+import EnterConversation from 'shared/components/molecules/EnterConversation';
+
 export default async function Index() {
   /*
    * Replace the elements below with your own.
@@ -36,8 +37,8 @@ export default async function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   return (
-    <div >
-    <h1 className="text-3xl">This is Homepage</h1>
+    <div>
+      <h1 className="text-3xl">This is Homepage</h1>
       <Button label="Follow" style={'primary'} />
       <Input hint="Enter you text" style={'default'} />
       <PopupCategory category="web development" />
@@ -51,7 +52,11 @@ export default async function Index() {
       <MyspaceCard img1={'/man.jpg'} img2={'/man.jpg'} img3={'/man.jpg'} />
       <RecommendedCard img={'/s1.avif'} img1={'/man.jpg'} />
       <EnableDiscovery />
-      <FollowSuggestion label1={'User'} label2={'User Profession'} gap={"gap-5"} />
+      <FollowSuggestion
+        label1={'User'}
+        label2={'User Profession'}
+        gap={'gap-5'}
+      />
       <StreamFollowCard name={'Rajat Kumar'} />
       <TopicContentCard />
       <ExpertCard />
@@ -88,6 +93,7 @@ export default async function Index() {
         img2={'/logo.jpg'}
         img3={'/google.png'}
       />
+      <EnterConversation />
     </div>
   );
 }
