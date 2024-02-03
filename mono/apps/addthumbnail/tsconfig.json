@@ -26,8 +26,8 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "../../apps/practice/.next/types/**/*.ts",
-    "../../dist/apps/practice/.next/types/**/*.ts",
+    "../../apps/addthumbnail/.next/types/**/*.ts",
+    "../../dist/apps/addthumbnail/.next/types/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],

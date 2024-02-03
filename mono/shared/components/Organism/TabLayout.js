@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 
-const TabLayout = ({ tabs, tabContent }) => {
+const TabLayout = ({ tabs=[], tabContent=[] }) => {
   const [selected, setSelected] = useState(1);
-  const tabShown = tabContent.filter(content=>content.id===selected);
+  const tabShown = tabContent.filter((content) => content.id === selected);
   return (
     <div className="flex flex-col">
       <div className="flex justify-center">
@@ -19,10 +19,10 @@ const TabLayout = ({ tabs, tabContent }) => {
           );
         })}
       </div>
-      {tabShown.map((data)=>{
+      {tabShown.map((data) => {
         return (
-          <div className='bg-gray-300 h-[500px] w-full'>{data.content}</div>
-        )
+          <div className="bg-gray-300 h-[500px] w-full">{data.content}</div>
+        );
       })}
     </div>
   );
