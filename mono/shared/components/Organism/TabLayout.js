@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 const TabLayout = ({ tabs = [], tabContent = [], flexStyle, flexStyle1 }) => {
   const [selected, setSelected] = useState(1);
-  const tabShown = tabContent.filter((content) => content.id === selected);
+  const tabShown = tabContent.filter(content=>content.id===selected);
   return (
     <div className={`flex  ${flexStyle} `}>
       <div className={`flex justify-center ${flexStyle1}`}>

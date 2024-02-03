@@ -2,12 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import Text from '../atoms/Text';
 
-const TopicContentCard = () => {
+const TopicContentCard = ({img}) => {
   return (
-    <div className='w-fit h-fit bg-slate-600'>
-      <div className="bg-rose-400 w-fit h-fit rounded-xl">
-        <Image src={''} width={200} height={350} alt="short video" />
-      </div>
+    <div className='border w-[250px] h-[400px] rounded-2xl pb-2'>
+      {/* <div className="w-full h-[400px]"> */}
+        <Image src={img} width={200} height={350} alt="short video" className='h-[87%] w-full object-cover rounded-t-xl'/>
+      {/* </div> */}
       <div>
         <Text label="Rondy Ros" style="follow-text2" />
         <Text label="The Ottoman Empire Season" style="follow-text2" />

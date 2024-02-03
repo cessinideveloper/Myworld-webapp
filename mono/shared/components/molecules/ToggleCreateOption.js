@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const ToggleCreateOption = ({ optionTitle, optionDesc }) => {
   return (
-    <div className="bg-green-800 flex items-center gap-5">
+    <div className="flex items-center gap-5">
       <ToggleButton />
       <div>
         <Text label={optionTitle} style='slider-props'/>
