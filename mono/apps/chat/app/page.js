@@ -9,7 +9,6 @@ export default async function Index() {
       <Sidebar />
       <div className="ml-[7vw] flex w-[93vw]">
         <div className="bg-rose-300 w-[35%] h-screen flex flex-col">
-          {/* <div>header</div> */}
           <div className='flex justify-between px-5 py-3'>
             <Header headerName={'Messages'} styleName={'room-text'}/>
             <div>
@@ -28,7 +27,7 @@ export default async function Index() {
             <div>image and username</div>
             <div>info icon</div>
           </div>
-          <div className='h-[80%] bg-slate-500'>chat area</div>
+          <div className='h-[80%] bg-slate-500'>chat area organism will show here</div>
           <div className='h-[10%] bg-pink-300 flex px-5 py-3'>
             <div>record icon</div>
             <div>video icon</div>
