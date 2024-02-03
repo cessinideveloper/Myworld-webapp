@@ -13,10 +13,10 @@ const styleClassess = {
   primary:
     'bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
   secondary:
-    'bg-gray-200 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded-full w-fit',
+    'bg-gray-200 hover:text-white hover:bg-gray-700 text-black font-bold py-2 px-4 rounded-full w-fit',
   success:
     'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full',
-  info: 'bg-black hover:bg-gray-700 text-white font-bold py-1 px-6 rounded-full',
+  info: 'bg-gray-200 hover:bg-gray-700 text-white font-bold py-1 text-base px-6 rounded-full w-fit h-auto',
   follow:
     'bg-white hover:bg-gray-900 hover:text-white font-semibold border px-4 py-0 text-sm rounded-full',
 };

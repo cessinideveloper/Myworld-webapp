@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import 'globals.css';
 import PropTypes from 'prop-types';
 
@@ -10,6 +11,8 @@ const styleClassess = {
     'bg-white w-[100%] px-4 py-3 rounded-full border-4 border-gray-100',
   'thumbnail-text':
     'w-[100%] border-b pb-4 border-gray-700 text-[35px] font-bold',
+  'edit-text':
+    ' bg-white w-[100%] px-4 py-3 rounded-2xl border border-gray-500',
 };
 
 const Input = ({ hint, style }) => {

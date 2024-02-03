@@ -18,7 +18,7 @@ const styleClassess = {
   'expert-tag': 'text-[11px] font-semibold text-gray-400',
   'chat-head': 'text-3xl font-bold',
   'create1 room': 'text-[37px] font-bold text-gray-400',
-  'create2-text': 'text-[16px] font-semibold text-gray-200',
+  'create2-text': 'text-[16px]',
   'button-text': 'text-lg font-bold',
   'button-text2': 'text-xl font-bold text-white',
   'create-text3': 'text-xl font-bold text-blue-400',
@@ -33,7 +33,7 @@ Text.propTypes = {
   style: PropTypes.string.isRequired,
 };
 Text.defaultProps = {
-  style: 'default'
-}
+  style: 'default',
+};
 
 export default Text;

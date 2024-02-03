@@ -43,20 +43,28 @@ const Popup = () => {
   const [popup3, setPopup3] = useState(false);
   const [Modal, setModal] = useState(true);
   const [selectedTech, setSelectedTech] = useState([]);
+  const [selectedTechCount, setSelectedTechCount] = useState(0);
+  const [selectedHealthCount, setSelectedHealthCount] = useState(0);
   const [selectedHealth, setSelectedHealth] = useState([]);
   const handleSelectTech = (item, isChecked) => {
     if (isChecked) {
       setSelectedTech([...selectedTech, item]);
+      setSelectedTechCount(selectedTechCount + 1);
     } else {
-      setSelectedTech(selectedTech.filter((i) => i.index !== item.index));
+      setSelectedTech(selectedTech.filter((i) => i !== item));
+      setSelectedTechCount(selectedTechCount - 1);
     }
+    console.log('Selected Tech Count:', selectedTechCount);
   };
   const handleSelectHealth = (item, isChecked) => {
     if (isChecked) {
       setSelectedHealth([...selectedHealth, item]);
+      setSelectedHealthCount(selectedHealthCount + 1);
     } else {
-      setSelectedHealth(selectedHealth.filter((i) => i.index !== item.index));
+      setSelectedHealth(selectedHealth.filter((i) => i !== item));
+      setSelectedHealthCount(selectedHealthCount - 1);
     }
+    console.log('Selected Health Count:', selectedHealthCount);
   };
   const handleClick = () => {
     if (popup1) {
@@ -101,6 +109,7 @@ const Popup = () => {
                           handleSelectTech(item, e.target.checked)
                         }
                         checked={selectedTech.includes(item)}
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -113,6 +122,7 @@ const Popup = () => {
                           handleSelectTech(item, e.target.checked)
                         }
                         checked={selectedTech.includes(item)}
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -209,9 +219,7 @@ const Popup = () => {
               label="Next"
               className="w-full"
               onClick={handleClick}
-              // disabled={
-              //   selectedTech.length === 0 || selectedHealth.length === 0
-              // }
+              // disabled={selectedTechCount + selectedHealthCount < 5}
             />
           </div>
         </div>
