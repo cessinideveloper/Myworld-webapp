@@ -6,12 +6,12 @@ const TabLayout = ({ tabs = [], tabContent = [], flexStyle, flexStyle1 }) => {
   const tabShown = tabContent.filter(content=>content.id===selected);
   return (
     <div className={`flex  ${flexStyle} `}>
-      <div className={`flex justify-center ${flexStyle1}`}>
+      <div className={`flex ${flexStyle1}`}>
         {tabs.map((tab) => {
           return (
             <div
               key={tab.id}
-              className="p-4 bg-gray-400 m-2 cursor-pointer whitespace-nowrap"
+              className="p-4 m-2 cursor-pointer whitespace-nowrap font-semibold"
               onClick={() => setSelected(tab.id)}
             >
               {tab.data}

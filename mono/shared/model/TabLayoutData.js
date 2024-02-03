@@ -1,5 +1,7 @@
 import AccountSettings from 'shared/components/molecules/AccountSettings';
 import ManageProfile from 'shared/components/molecules/ManageProfile';
+import Notification from '../components/molecules/Notification';
+import Security from '../components/molecules/Security';
 import UserProfile from 'shared/components/molecules/UserProfile';
 export const tabsData = [
   {
@@ -60,11 +62,11 @@ export const profileTabContent = [
   },
   {
     id: 3,
-    content: ['nothing is here'],
+    content: [<Notification/>],
   },
   {
     id: 4,
-    content: ['nothing is here'],
+    content: [<Security/>],
   },
 ];
 

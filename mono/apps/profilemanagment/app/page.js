@@ -9,7 +9,10 @@ import AccountSettings from 'shared/components/molecules/AccountSettings';
 export default async function Index() {
   return (
     <div>
-      <Text style="dropdown-text" label="Profile Managment" />
+    <div className='pt-4 pl-16 flex flex-row gap-10'>
+    <Image src={'/ic_back_arrow.svg'} height={20} width={20} alt='backarrow'/>
+    <Text style="dropdown-text" label="Profile Managment" />
+    </div>
       <div className="w-[60%] py-10">
         <TabLayout
           tabs={profileTabsData}
