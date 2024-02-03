@@ -3,25 +3,13 @@ import SignUp from 'shared/components/Organism/SignUp';
 import Tag from 'shared/components/atoms/Tag';
 import Text from 'shared/components/atoms/Text';
 import TabLayout from 'shared/components/Organism/TabLayout';
+import Sidebar from 'shared/components/Organism/Sidebar';
 import { searchTabContent, searchTabData } from 'shared/model/TabLayoutData'
 export default async function Index() {
   return (
     <div className="relative">
       <div className=" fixed left-0 top-0 h-full ">
-        {/* <Sidebar
-          img={'/logo.jpg'}
-          img1={'/Homeactive.svg'}
-          img1Alt={'/Homeinactive.svg'}
-          img2={'/ic_create.svg'}
-          img3={'/inactive_explore.svg'}
-          img3Alt={'/ic_active_explore.svg'}
-          img4={'/ic_inactivechat.svg'}
-          img4Alt={'/ic_activechat.svg'}
-          img5={'/ic_user_defolt_avator.svg'}
-          img6={'/inactive_explore.svg'}
-          img6Alt={'/ic_active_explore.svg'}
-          img7={'/ic_more_option.svg'}
-        /> */}
+       <Sidebar/>
       </div>
       <div className=" absolute left-[7vw] top-0 p-4">
         <Input hint="Search room, experts" style={'home'} />
