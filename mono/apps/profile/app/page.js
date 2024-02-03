@@ -3,7 +3,7 @@ import Sidebar from 'shared/components/Organism/Sidebar';
 import Header from 'shared/components/molecules/Header';
 import Image from 'next/image';
 import Button from 'shared/components/atoms/Button';
-import HubCard from 'shared/components/molecules/HubCard';
+import TabLayout from 'shared/components/Organism/TabLayout';
 export default async function Index() {
   return (
     <div>
@@ -21,6 +21,7 @@ export default async function Index() {
             img11={'/facebook-icon.svg'}
             img12={'/twitter-icon.svg'}
             img13={'/whatsapp-icom.svg'}
+            headerName='Profile'
           />
         </div>
         <div className="flex flex-col justify-center items-center gap-3 relative mt-20">
@@ -35,7 +36,7 @@ export default async function Index() {
           <Text style="signup text" label="I love smile" />
           <Text style="signup text" label="1 followers  0 following" />
           <Button style={'secondary'} label="Edit profile" />
-          <div></div>
+          <TabLayout/>
         </div>
       </div>
     </div>
