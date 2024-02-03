@@ -8,13 +8,13 @@ const SignUp = ({ img, txt }) => {
       <Text style="signup heading" label="New to Myworld?" />
       <Text
         style="signup text"
-        label="Signup now to get your own personalized Hub!"
+        label="Sign up now to get your own personalized Hub!"
       />
-      <ImageButton text={'Sign Up with Google'} img={img} />
-      <ImageButton text={'Sign Up with Phone or Email'} />
+      <ImageButton text={'Sign up with Google'} img={img} />
+      <ImageButton text={'Sign up with phone or email'} />
       <Text
         style="signup text"
-        label="By signing up you agree to the Terms of Service and Privacy Policy including Cookies Use"
+        label="By signing up, you agree to the Terms of Service and Privacy Policy including Cookies Use."
       />
     </div>
   );

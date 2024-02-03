@@ -23,6 +23,7 @@ const styleClassess = {
   'button-text2': 'text-xl font-bold text-white',
   'create-text3': 'text-xl font-bold text-blue-400',
   'section-following': 'text-xs font-semibold',
+  'create-hub': 'text-[20px] font-bold text-blue-500',
 };
 const Text = ({ label, style }) => {
   const textClasses = `${styleClassess[style]}`;

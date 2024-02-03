@@ -11,7 +11,7 @@ const TabLayout = ({ tabs, tabContent }) => {
           return (
             <div
               key={tab.id}
-              className="p-4 bg-gray-400 m-2 cursor-pointer"
+              className="p-4 m-2 cursor-pointer"
               onClick={() => setSelected(tab.id)}
             >
               {tab.data}
@@ -21,7 +21,7 @@ const TabLayout = ({ tabs, tabContent }) => {
       </div>
       {tabShown.map((data)=>{
         return (
-          <div className='bg-gray-300 h-[500px] w-full'>{data.content}</div>
+          <div className='h-[500px] w-full '>{data.content}</div>
         )
       })}
     </div>
