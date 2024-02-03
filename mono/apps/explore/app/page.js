@@ -17,7 +17,7 @@ export default async function Index() {
   return (
     <div className="flex">
       <Sidebar/>
-      <div className="flex flex-col w-[90vw] ml-[10vw] overflow-y-hidden gap-10 mb-10">
+      <div className="flex flex-col w-[90vw] ml-[7vw] overflow-y-hidden gap-10 mb-10">
         <div className="flex w-full px-5 py-5">
           <div className="w-[10%]">
             <Header styleName={'signup heading'} headerName={'Explore'} />
