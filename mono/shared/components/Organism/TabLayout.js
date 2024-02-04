@@ -8,6 +8,7 @@ const TabLayout = ({
   flexStyle1,
   tabcontentStyle,
   tabStyle,
+  tabBorderStyle,
 }) => {
   const [selected, setSelected] = useState(1);
   const tabShown = tabContent.filter((content) => content.id === selected);
@@ -19,7 +20,7 @@ const TabLayout = ({
             <div
               key={tab.id}
               className={`p-4  m-2 cursor-pointer whitespace-nowrap ${
-                selected === tab.id ? 'border-b-2 border-black' : ''
+                selected === tab.id ? `${tabBorderStyle}` : ''
               }`}
               onClick={() => setSelected(tab.id)}
             >
@@ -44,11 +45,13 @@ TabLayout.propTypes = {
   flexStyle1: PropTypes.string,
   tabcontentStyle: PropTypes.string,
   tabStyle: PropTypes.string,
+  tabBorderStyle: PropTypes.string,
 };
 TabLayout.defaultprops = {
   flexStyle: 'flex-col',
   flexStyle1: 'flex-row',
   tabcontentStyle: 'bg-gray-300 w-full',
   tabStyle: '',
+  tabBorderStyle: '',
 };
 export default TabLayout;

@@ -20,6 +20,7 @@ export default async function Index() {
           flexStyle1={'flex-col'}
           tabcontentStyle={'w-[60%] absolute right-0 top-20 -z-10'}
           tabStyle={'fixed left-0 top-20 w-[20%]'}
+          tabBorderStyle={'border-b-2 border-black'}
         />
       </div>
     </div>
