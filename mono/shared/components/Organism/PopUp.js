@@ -4,6 +4,7 @@ import Text from 'shared/components/atoms/Text';
 import Button from 'shared/components/atoms/Button';
 import PopupCategory from 'shared/components/atoms/PopupCategory';
 import FollowSuggestion from '../molecules/FollowSuggestion';
+import Chiplanguage from 'shared/components/atoms/chiplanguage';
 const Popup = () => {
   const technologyarr = [
     'Artificial intelligence & machine learning',
@@ -43,8 +44,8 @@ const Popup = () => {
   const [popup3, setPopup3] = useState(false);
   const [Modal, setModal] = useState(true);
   const [selectedTech, setSelectedTech] = useState([]);
-  const [selectedTechCount, setSelectedTechCount] = useState(0);
-  const [selectedHealthCount, setSelectedHealthCount] = useState(0);
+  const [selectedTechCount, setSelectedTechCount] = useState(1);
+  const [selectedHealthCount, setSelectedHealthCount] = useState(1);
   const [selectedHealth, setSelectedHealth] = useState([]);
   const handleSelectTech = (item, isChecked) => {
     if (isChecked) {
@@ -66,6 +67,17 @@ const Popup = () => {
     }
     console.log('Selected Health Count:', selectedHealthCount);
   };
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleSelectCategory = (category) => {
+    // setSelectedCategory((prevselectedcategory) => {
+    //   prevselectedcategory === category ? null : category;
+    // });
+    setSelectedCategory(category);
+  };
+
+  const categories = ['Hindi', 'English', 'Bengali'];
+
   const handleClick = () => {
     if (popup1) {
       setPopup1(false);
@@ -83,7 +95,7 @@ const Popup = () => {
   return (
     <>
       {Modal && (
-        <div className=" bg-gray-900 bg-opacity-30  fixed top-0 left-0 w-full h-full flex items-center justify-center">
+        <div className=" bg-gray-900 bg-opacity-30  fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
           <div className="  w-1/2 h-5/6  flex flex-col justify-between  gap-4 bg-white rounded-3xl p-7 z-50">
             {popup1 && (
               <div className="flex flex-col gap-2">
@@ -105,10 +117,9 @@ const Popup = () => {
                   <div className="flex whitespace-nowrap gap-x-3 gap-y-4">
                     {row1.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectTech(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectTech(item, !selectedTech.includes(item))
                         }
-                        checked={selectedTech.includes(item)}
                         key={index}
                       >
                         <PopupCategory category={item} key={index} />
@@ -118,10 +129,9 @@ const Popup = () => {
                   <div className="flex items-center justify-start whitespace-nowrap gap-x-3 gap-y-4">
                     {row2.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectTech(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectTech(item, !selectedTech.includes(item))
                         }
-                        checked={selectedTech.includes(item)}
                         key={index}
                       >
                         <PopupCategory category={item} key={index} />
@@ -136,10 +146,13 @@ const Popup = () => {
                   <div className="flex whitespace-nowrap gap-x-3 gap-y-4">
                     {row1health.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectHealth(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectHealth(
+                            item,
+                            !selectedHealth.includes(item)
+                          )
                         }
-                        checked={selectedHealth.includes(item)}
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -148,10 +161,12 @@ const Popup = () => {
                   <div className="flex items-center justify-start whitespace-nowrap gap-x-3 gap-y-4">
                     {row2health.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectHealth(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectHealth(
+                            item,
+                            !selectedHealth.includes(item)
+                          )
                         }
-                        checked={selectedHealth.includes(item)}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -175,9 +190,17 @@ const Popup = () => {
                 </div>
                 <Text style="slider-props" label="Technology" />
                 <div className="flex gap-4">
-                  <PopupCategory category="Hindi" />{' '}
-                  <PopupCategory category="English" />{' '}
-                  <PopupCategory category="Bengali" />
+                  {categories.map((category, index) => (
+                    <div
+                      key={index}
+                      onClick={() => handleSelectCategory(category)}
+                    >
+                      <Chiplanguage
+                        category={category}
+                        isSelected={category === selectedCategory}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -219,7 +242,7 @@ const Popup = () => {
               label="Next"
               className="w-full"
               onClick={handleClick}
-              // disabled={selectedTechCount + selectedHealthCount < 5}
+              disabled={selectedTechCount + selectedHealthCount <= 5}
             />
           </div>
         </div>

@@ -4,59 +4,8 @@ import Header from 'shared/components/molecules/Header';
 import Image from 'next/image';
 import Button from 'shared/components/atoms/Button';
 import TabLayout from 'shared/components/Organism/TabLayout';
-import HubCard from 'shared/components/molecules/HubCard';
+import { tabsData, tabsContent } from 'shared/model/TabLayoutData';
 export default async function Index() {
-  const tabs = [
-    { id: 1, data: 'Hub' },
-    { id: 2, data: 'Video' },
-    { id: 3, data: 'Save' },
-  ];
-
-  const tabContents = [
-    [
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-    ],
-    [
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-    ],
-    [
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-      {
-        thumbnail: '/thumbnail.avif',
-        profilePic: '/ic_user_defolt_avator.svg',
-      },
-    ],
-  ];
-
   return (
     <div>
       {/* <p>This is from practice page</p>
@@ -88,10 +37,12 @@ export default async function Index() {
           <Text style="signup text" label="I love smile" />
           <Text style="signup text" label="1 followers  0 following" />
           <Button style={'secondary'} label="Edit profile" />
-          <TabLayout tabs={tabs} tabContent={tabContents} />
-          <HubCard />
-          <HubCard />
-          <HubCard />
+          <TabLayout
+            tabs={tabsData}
+            tabContent={tabsContent}
+            flexStyle={'flex-col'}
+            flexStyle1={'flex-row'}
+          />
         </div>
       </div>
     </div>

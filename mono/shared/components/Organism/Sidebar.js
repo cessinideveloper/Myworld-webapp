@@ -106,7 +106,7 @@ const Sidebar = () => {
           className="rounded-full w-12 h-12 mt-4"
         />
         {menu && (
-          <div className="bg-white rounded-xl w-[15vw] flex flex-col gap-2 justify-center  p-2 border border-gray-400 absolute bottom-12 left-24">
+          <div className="bg-white rounded-xl w-[15vw] flex flex-col gap-2 justify-center  p-2 border border-gray-400 absolute bottom-12 left-24 z-50">
             <Text style="slider-props" label="Download App" />
             <Text style="slider-props" label="About Myworld" />
             <Text style="slider-props" label="Manage Your Hub" />
