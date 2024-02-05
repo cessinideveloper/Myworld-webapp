@@ -10,6 +10,7 @@ import ExploreInactive from '../../assets/inactive_explore.svg';
 import ChatActive from '../../assets/ic_activechat.svg';
 import ChatInactive from '../../assets/ic_inactivechat.svg';
 import Notification from '../../assets/inactive_notification.svg';
+import Logo from '../../assets/myworldlogo.png';
 import MoreOption from '../../assets/ic_more_option.svg';
 import Create from '../../assets/ic_create.svg';
 import { useRouter } from 'next/navigation';
@@ -41,7 +42,7 @@ const Sidebar = () => {
     <div className=" flex flex-col gap-12 w-[7vw] h-screen fixed items-center border-r py-7">
       <div>
         <Image
-          src={Profile}
+          src={Logo}
           alt="Image"
           width={100}
           height={200}
@@ -126,7 +127,7 @@ const Sidebar = () => {
           }}
         />
         {menu && (
-          <div className="bg-white rounded-xl w-[15vw] flex flex-col gap-2 justify-center  p-2 border border-gray-400 absolute bottom-12 left-24 z-[1000]">
+          <div className="bg-white rounded-xl w-[15vw] flex flex-col gap-2 justify-center  p-2 border border-gray-400 absolute bottom-12 left-24 z-[9999]">
             <Text style="slider-props" label="Download App" />
             <Text style="slider-props" label="About Myworld" />
             <Text style="slider-props" label="Manage Your Hub" />

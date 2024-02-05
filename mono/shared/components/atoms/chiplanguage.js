@@ -10,12 +10,12 @@ const styleClassess = {
     'bg-blue-500 border-[1px] border-blue-600 px-5 py-[2px] rounded-full cursor-pointer w-fit text-white',
 };
 
-const chiplanguage = ({ category, isSelected }) => {
+const chiplanguage = ({ category, isselected }) => {
   return (
     <div
-      isSelected={isSelected}
+      iisselectedsSelected={isselected}
       className={
-        isSelected
+        isselected
           ? `${styleClassess['select']}`
           : `${styleClassess['default']}`
       }

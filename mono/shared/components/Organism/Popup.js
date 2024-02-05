@@ -56,7 +56,7 @@ const Popup = () => {
       setSelectedTech(selectedTech.filter((i) => i !== item));
       setSelectedTechCount((prevCount) => prevCount - 1);
     }
-    console.log('Selected Tech Count:', selectedTechCount);
+    // console.log('Selected Tech Count:', selectedTechCount);
   };
   const handleSelectHealth = (item, isChecked) => {
     if (isChecked) {
@@ -66,9 +66,9 @@ const Popup = () => {
       setSelectedHealth(selectedHealth.filter((i) => i !== item));
       setSelectedHealthCount((prevCount) => prevCount - 1);
     }
-    console.log('Selected Health Count:', selectedHealthCount);
+    // console.log('Selected Health Count:', selectedHealthCount);
   };
-  console.log('total items selected', selectedTechCount + selectedHealthCount);
+  // console.log('total items selected', selectedTechCount + selectedHealthCount);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleSelectCategory = (category) => {
@@ -168,6 +168,7 @@ const Popup = () => {
                             !selectedHealth.includes(item)
                           )
                         }
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -198,7 +199,7 @@ const Popup = () => {
                     >
                       <Chiplanguage
                         category={category}
-                        isSelected={category === selectedCategory}
+                        isselected={category === selectedCategory}
                       />
                     </div>
                   ))}

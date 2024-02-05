@@ -43,9 +43,9 @@ const Header = ({
       <Text style={styleName} label={headerName} />
       <div className="flex gap-5 relative">
         {img1 && (
-          <Image src={img1} width={30} height={30} onClick={handleClick} />
+          <Image src={img1} alt='image' width={30} height={30} onClick={handleClick} />
         )}
-        {img2 && <Image src={img2} width={30} height={30} />}
+        {img2 && <Image src={img2} alt='image' width={30} height={30} />}
         {modal && (
           <div className=" absolute top-9 right-5">
             <Share img11={img11} img12={img12} img13={img13} />

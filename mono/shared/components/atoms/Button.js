@@ -53,6 +53,8 @@ Button.propTypes = {
     'info',
     'follow',
     'danger',
+    'btnInactive',
+    'btnActive',
   ]),
 };
 

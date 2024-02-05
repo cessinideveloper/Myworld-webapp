@@ -18,6 +18,7 @@ const RecommendedCard = ({ img, img1 }) => {
       <div className="flex gap-1 absolute left-3 bottom-10 z-10">
         <Image
           src={img1}
+          alt='image'
           width={36}
           height={36}
           className="w-7 h-7 outline border border-black rounded-full"

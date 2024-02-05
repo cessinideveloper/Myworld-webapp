@@ -15,12 +15,14 @@ const HubSuggetion = () => {
             width={70}
             height={100}
             className=" rounded-t"
+            alt='image'
           />
           <Image
             src={'/man.jpg'}
             width={70}
             height={100}
             className=" rounded-b"
+            alt='image'
           />
         </div>
         <div className="w-[20vw] flex flex-col justify-center">
