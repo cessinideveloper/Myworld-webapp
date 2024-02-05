@@ -42,49 +42,50 @@ const Popup = () => {
   const [popup1, setPopup1] = useState(true);
   const [popup2, setPopup2] = useState(false);
   const [popup3, setPopup3] = useState(false);
+  const [currentPopup, setCurrentPopup] = useState('popup1');
   const [Modal, setModal] = useState(true);
   const [selectedTech, setSelectedTech] = useState([]);
-  const [selectedTechCount, setSelectedTechCount] = useState(1);
-  const [selectedHealthCount, setSelectedHealthCount] = useState(1);
+  const [selectedTechCount, setSelectedTechCount] = useState(0);
+  const [selectedHealthCount, setSelectedHealthCount] = useState(0);
   const [selectedHealth, setSelectedHealth] = useState([]);
   const handleSelectTech = (item, isChecked) => {
     if (isChecked) {
       setSelectedTech([...selectedTech, item]);
-      setSelectedTechCount(selectedTechCount + 1);
+      setSelectedTechCount((prevCount) => prevCount + 1);
     } else {
       setSelectedTech(selectedTech.filter((i) => i !== item));
-      setSelectedTechCount(selectedTechCount - 1);
+      setSelectedTechCount((prevCount) => prevCount - 1);
     }
     console.log('Selected Tech Count:', selectedTechCount);
   };
   const handleSelectHealth = (item, isChecked) => {
     if (isChecked) {
       setSelectedHealth([...selectedHealth, item]);
-      setSelectedHealthCount(selectedHealthCount + 1);
+      setSelectedHealthCount((prevCount) => prevCount + 1);
     } else {
       setSelectedHealth(selectedHealth.filter((i) => i !== item));
-      setSelectedHealthCount(selectedHealthCount - 1);
+      setSelectedHealthCount((prevCount) => prevCount - 1);
     }
     console.log('Selected Health Count:', selectedHealthCount);
   };
+  console.log('total items selected', selectedTechCount + selectedHealthCount);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleSelectCategory = (category) => {
-    // setSelectedCategory((prevselectedcategory) => {
-    //   prevselectedcategory === category ? null : category;
-    // });
     setSelectedCategory(category);
   };
 
-  const categories = ['Hindi', 'English', 'Bengali'];
+  const Languages = ['Hindi', 'English', 'Bengali'];
 
   const handleClick = () => {
     if (popup1) {
       setPopup1(false);
       setPopup2(true);
+      setCurrentPopup('popup2');
     } else if (popup2) {
       setPopup2(false);
       setPopup3(true);
+      setCurrentPopup('popup3');
     } else if (popup3) {
       setPopup1(false);
       setPopup2(false);
@@ -190,7 +191,7 @@ const Popup = () => {
                 </div>
                 <Text style="slider-props" label="Technology" />
                 <div className="flex gap-4">
-                  {categories.map((category, index) => (
+                  {Languages.map((category, index) => (
                     <div
                       key={index}
                       onClick={() => handleSelectCategory(category)}
@@ -221,18 +222,10 @@ const Popup = () => {
                   />
                 </div>
                 <div className="overflow-y-auto scrollbar h-1/3">
-                  {' '}
                   <FollowSuggestion
                     label1={'User'}
                     label2={'User Profession'}
                     style={'follow'}
-                    gap={'gap-72'}
-                  />
-                  <FollowSuggestion
-                    label1={'User1'}
-                    label2={'User Profession'}
-                    style={'follow'}
-                    gap={'gap-72'}
                   />
                 </div>
               </div>
@@ -242,7 +235,18 @@ const Popup = () => {
               label="Next"
               className="w-full"
               onClick={handleClick}
-              disabled={selectedTechCount + selectedHealthCount <= 5}
+              disabled={
+                (currentPopup === 'popup1' &&
+                  selectedTechCount + selectedHealthCount < 5) ||
+                (currentPopup === 'popup2' && selectedCategory === null)
+              }
+              style={
+                (currentPopup === 'popup1' &&
+                  selectedTechCount + selectedHealthCount < 5) ||
+                (currentPopup === 'popup2' && selectedCategory === null)
+                  ? 'btnInactive'
+                  : 'btnActive'
+              }
             />
           </div>
         </div>

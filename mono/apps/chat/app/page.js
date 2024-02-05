@@ -6,13 +6,21 @@ import Image from 'next/image';
 export default async function Index() {
   return (
     <div className="flex">
-      <Sidebar />
+      <div>
+        <Sidebar />
+      </div>
       <div className="ml-[7vw] flex w-[93vw]">
         <div className="bg-rose-300 w-[35%] h-screen flex flex-col">
-          <div className='flex justify-between px-5 py-3'>
-            <Header headerName={'Messages'} styleName={'room-text'}/>
+          <div className="flex justify-between px-5 py-3">
+            <Header headerName={'Messages'} styleName={'room-text'} />
             <div>
-              <Image src={threedots} width={20} height={20} alt='more' className='rotate-90'/>
+              <Image
+                src={threedots}
+                width={20}
+                height={20}
+                alt="more"
+                className="rotate-90"
+              />
             </div>
           </div>
           <div className="px-5 py-3">
@@ -23,15 +31,17 @@ export default async function Index() {
           </div>
         </div>
         <div className="bg-rose-500 w-[65%] h-screen">
-          <div className='h-[10%] bg-blue-500 flex justify-between px-5 py-3'>
+          <div className="h-[10%] bg-blue-500 flex justify-between px-5 py-3">
             <div>image and username</div>
             <div>info icon</div>
           </div>
-          <div className='h-[80%] bg-slate-500'>chat area organism will show here</div>
-          <div className='h-[10%] bg-pink-300 flex px-5 py-3'>
+          <div className="h-[80%] bg-slate-500">
+            chat area organism will show here
+          </div>
+          <div className="h-[10%] bg-pink-300 flex px-5 py-3">
             <div>record icon</div>
             <div>video icon</div>
-            <Input hint='Say hello...' style={'message'}/>
+            <Input hint="Say hello..." style={'message'} />
             <div>Like icon</div>
           </div>
         </div>

@@ -8,12 +8,14 @@ const FollowSuggestion = ({ imgSrc, gap, label1, label2, style }) => {
   return (
     <div className={`flex gap-5 p-5 items-center  w-[100%]`}>
       <Image src={imgSrc} width={30} height={30} alt="user" />
-      <div className={`flex ${gap}`}>
+      <div className={`flex ${gap} justify-between w-[100%]`}>
         <div className={`flex flex-col `}>
           <Text label={label1} style="follow-text1" />
           <Text label={label2} style="follow-text2" />
         </div>
-        <Button label="Follow" style={style} />
+        <div className="flex items-center justify-center">
+          <Button label="Follow" style={style} />
+        </div>
       </div>
     </div>
   );
