@@ -8,32 +8,7 @@ import PopUp from 'shared/components/Organism/PopUp';
 export default async function Index() {
   return (
     <div className="relative w-[100%]">
-      {/* <h1 className="text-3xl">This is Homepage</h1>
-      <Button label="Follow" style={'primary'} />
-      <Input hint="Enter you text" style={'default'} />
-      <PopupCategory category="web development" />
-      <ToggleButton />
-      <Tag label="Follow" />
-      <Toast onClick={handleClick} label={'Howdy Modi'} />
-      <Text label={'Schedule Hub'} style={'create-text3'} />
-      <ImageButton img={'/google.png'} style={'text-black'} />
-      <HubSuggestion />
-      <Sectiontag />
-      <MyspaceCard img1={'/man.jpg'} img2={'/man.jpg'} img3={'/man.jpg'} />
-      <RecommendedCard img={'/s1.avif'} img1={'/man.jpg'} />
-      <EnableDiscovery />
-      <FollowSuggestion label1={'User'} label2={'User Profession'} gap={"gap-5"} />
-      <StreamFollowCard name={'Rajat Kumar'} />
-      <TopicContentCard />
-      <ExpertCard />
-      <HubCard />
-      <ToggleCreateOption
-        optionTitle={'Everyone'}
-        optionDesc={'Anyone can send you Hub join request'}
-      />
-
-      <Caresoul child={<TopicContentCard />} />
-      <Livestream /> */}
+      
       <div className="z-[100]">
         <PopUp />
       </div>
