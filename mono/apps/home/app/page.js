@@ -1,3 +1,4 @@
+'use client';
 import Input from 'shared/components/atoms/Input';
 import Livestream from 'shared/components/Organism/Livestream';
 import Sidebar from 'shared/components/Organism/Sidebar';
@@ -5,10 +6,23 @@ import Suggestion from 'shared/components/Organism/Suggestion';
 import SignUp from 'shared/components/Organism/SignUp';
 import Header from 'shared/components/molecules/Header';
 import PopUp from 'shared/components/Organism/PopUp';
-export default async function Index() {
+import SplashScreen from 'shared/components/Organism/SplashScreen';
+import { useEffect, useState } from 'react';
+export default function Index() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setShow(true);
+    }, 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+  if (!show) {
+    return <SplashScreen />;
+  }
   return (
     <div className="relative w-[100%]">
-      
       <div className="z-[100]">
         <PopUp />
       </div>
@@ -23,7 +37,7 @@ export default async function Index() {
       </div>
       <div
         className=" absolute right-0 top-3 w-[25%] flex flex-col gap-6 border-l mr-3 pl-3  z-[-1]
-      "
+    "
       >
         <div className="fixed top-0 right-0 mr-3 p-3 w-[25%] z-10 bg-white">
           <Input hint="Enter you text" style={'home'} />
