@@ -7,6 +7,7 @@ import SignUp from 'shared/components/Organism/SignUp';
 import Header from 'shared/components/molecules/Header';
 import PopUp from 'shared/components/Organism/PopUp';
 import SplashScreen from 'shared/components/Organism/SplashScreen';
+import SaveDeviceIdLocalstorage from 'shared/utils/SaveDeviceIdLocalstorage';
 import { useEffect, useState } from 'react';
 export default function Index() {
   const [show, setShow] = useState(false);
@@ -23,6 +24,7 @@ export default function Index() {
   }
   return (
     <div className="relative w-[100%]">
+      <SaveDeviceIdLocalstorage/>
       <div className="z-[100]">
         <PopUp />
       </div>
