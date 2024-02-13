@@ -11,7 +11,7 @@ const styleClassess = {
     'bg-white w-[100%] px-8 py-3 rounded-full border-4 border-gray-100',
   'thumbnail-text':
     'w-[100%] border-b pb-8 border-gray-700 text-[35px] font-bold',
-    message: 'bg-white w-full px-8 py-3 rounded-full',
+    message: 'bg-gray-100 w-full px-8 py-3 rounded-full',
   'edit-text':
     ' bg-white w-[100%] px-4 py-3 rounded-2xl border border-gray-500',
 };
