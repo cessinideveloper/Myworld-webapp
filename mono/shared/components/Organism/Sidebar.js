@@ -9,10 +9,13 @@ import ExploreActive from '../../assets/ic_active_explore.svg';
 import ExploreInactive from '../../assets/inactive_explore.svg';
 import ChatActive from '../../assets/ic_activechat.svg';
 import ChatInactive from '../../assets/ic_inactivechat.svg';
+import Notification from '../../assets/inactive_notification.svg';
+import Logo from '../../assets/myworldlogo.png';
 import MoreOption from '../../assets/ic_more_option.svg';
 import Create from '../../assets/ic_create.svg';
-
+import { useRouter } from 'next/navigation';
 const Sidebar = () => {
+  const router = useRouter();
   const [imageState, setImageState] = useState({
     img1: false,
     img3: false,
@@ -39,7 +42,7 @@ const Sidebar = () => {
     <div className=" flex flex-col gap-12 w-[7vw] h-screen fixed items-center border-r py-7">
       <div>
         <Image
-          src={Profile}
+          src={Logo}
           alt="Image"
           width={100}
           height={200}
@@ -53,7 +56,10 @@ const Sidebar = () => {
           width={100}
           height={200}
           className=" w-6 h-6"
-          onClick={() => handleImageClick('img1')}
+          onClick={() => {
+            handleImageClick('img1');
+            router.push('http://localhost:3000');
+          }}
         />
         <Image
           src={imageState.img6 ? ExploreActive : ExploreInactive}
@@ -61,7 +67,10 @@ const Sidebar = () => {
           width={100}
           height={200}
           className=" w-6 h-6"
-          onClick={() => handleImageClick('img6')}
+          onClick={() => {
+            handleImageClick('img6');
+            router.push('http://localhost:3002');
+          }}
         />
 
         <Image
@@ -70,7 +79,10 @@ const Sidebar = () => {
           width={100}
           height={200}
           className=" w-6 h-6"
-          onClick={() => handleImageClick('img4')}
+          onClick={() => {
+            handleImageClick('img4');
+            router.push('http://localhost:3007');
+          }}
         />
         <Image
           src={Profile}
@@ -78,15 +90,21 @@ const Sidebar = () => {
           width={100}
           height={200}
           className=" w-6 h-6"
-          onClick={() => handleImageClick('img3')}
+          onClick={() => {
+            handleImageClick('img3');
+            router.push('http://localhost:3005');
+          }}
         />
         <Image
-          src={Profile}
+          src={Notification}
           alt="Image"
           width={100}
           height={200}
           className=" w-6 h-6"
-          onClick={() => handleImageClick('img5')}
+          onClick={() => {
+            handleImageClick('img5');
+            router.push('http://localhost:3004');
+          }}
         />
         <Image
           src={MoreOption}
@@ -104,9 +122,12 @@ const Sidebar = () => {
           width={100}
           height={200}
           className="rounded-full w-12 h-12 mt-4"
+          onClick={() => {
+            router.push('http://localhost:3008');
+          }}
         />
         {menu && (
-          <div className="bg-white rounded-xl w-[15vw] flex flex-col gap-2 justify-center  p-2 border border-gray-400 absolute bottom-12 left-24">
+          <div className="bg-white rounded-xl w-[15vw] flex flex-col gap-2 justify-center  p-2 border border-gray-400 absolute bottom-12 left-24 z-[9999]">
             <Text style="slider-props" label="Download App" />
             <Text style="slider-props" label="About Myworld" />
             <Text style="slider-props" label="Manage Your Hub" />

@@ -7,7 +7,7 @@ import Button from 'shared/components/atoms/Button';
 const HubSuggetion = () => {
   return (
     <div className="">
-      <Text label={'Hub you may like'} style={'signup heading'} />
+      
       <div className="flex gap-2">
         <div className="flex flex-col gap-0">
           <Image
@@ -15,12 +15,14 @@ const HubSuggetion = () => {
             width={70}
             height={100}
             className=" rounded-t"
+            alt='image'
           />
           <Image
             src={'/man.jpg'}
             width={70}
             height={100}
             className=" rounded-b"
+            alt='image'
           />
         </div>
         <div className="w-[20vw] flex flex-col justify-center">

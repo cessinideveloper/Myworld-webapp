@@ -6,9 +6,10 @@ const Suggestion = () => {
   return (
     <div className=" border w-[100%] p-2 rounded-xl">
       <Text label="Voice You may follow" style="signup heading" />
-      <FollowSuggestion label1={"User"} label2={"User Profession"} gap={"gap-16"} />
-      <FollowSuggestion label1={"User"} label2={"User Profession"} gap={"gap-16"} />
-      <FollowSuggestion label1={"User"} label2={"User Profession"} gap={"gap-16"} />
+      <FollowSuggestion label1={'User'} label2={'User Profession'} />
+      <FollowSuggestion label1={'User'} label2={'User Profession'} />
+      <FollowSuggestion label1={'User'} label2={'User Profession'} />
+      <Text label={'Hub you may like'} style={'signup heading'} />
       <HubSuggetion />
     </div>
   );

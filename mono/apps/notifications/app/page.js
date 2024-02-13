@@ -1,12 +1,14 @@
-import Sidebar from 'shared/components/Organism/Sidebar';
+'use client'
+import { useRouter } from 'next/navigation';
 export default async function Index() {
+  const router = useRouter();
   return (
     <div>
-      {/* <p>This is from practice page</p>
-      <EnterConversation /> */}
-      <div className=" fixed left-0 top-0 h-full z-[-1]">
-        <Sidebar />
-      </div>
+      <p>This is from practice page</p>
+
+      <button type="button" onClick={() => router.back()}>
+        Click here to go back
+      </button>
     </div>
   );
 }

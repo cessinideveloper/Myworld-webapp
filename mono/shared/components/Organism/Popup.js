@@ -4,6 +4,7 @@ import Text from 'shared/components/atoms/Text';
 import Button from 'shared/components/atoms/Button';
 import PopupCategory from 'shared/components/atoms/PopupCategory';
 import FollowSuggestion from '../molecules/FollowSuggestion';
+import Chiplanguage from 'shared/components/atoms/chiplanguage';
 const Popup = () => {
   const technologyarr = [
     'Artificial intelligence & machine learning',
@@ -41,30 +42,50 @@ const Popup = () => {
   const [popup1, setPopup1] = useState(true);
   const [popup2, setPopup2] = useState(false);
   const [popup3, setPopup3] = useState(false);
+  const [currentPopup, setCurrentPopup] = useState('popup1');
   const [Modal, setModal] = useState(true);
   const [selectedTech, setSelectedTech] = useState([]);
+  const [selectedTechCount, setSelectedTechCount] = useState(0);
+  const [selectedHealthCount, setSelectedHealthCount] = useState(0);
   const [selectedHealth, setSelectedHealth] = useState([]);
   const handleSelectTech = (item, isChecked) => {
     if (isChecked) {
       setSelectedTech([...selectedTech, item]);
+      setSelectedTechCount((prevCount) => prevCount + 1);
     } else {
-      setSelectedTech(selectedTech.filter((i) => i.index !== item.index));
+      setSelectedTech(selectedTech.filter((i) => i !== item));
+      setSelectedTechCount((prevCount) => prevCount - 1);
     }
+    // console.log('Selected Tech Count:', selectedTechCount);
   };
   const handleSelectHealth = (item, isChecked) => {
     if (isChecked) {
       setSelectedHealth([...selectedHealth, item]);
+      setSelectedHealthCount((prevCount) => prevCount + 1);
     } else {
-      setSelectedHealth(selectedHealth.filter((i) => i.index !== item.index));
+      setSelectedHealth(selectedHealth.filter((i) => i !== item));
+      setSelectedHealthCount((prevCount) => prevCount - 1);
     }
+    // console.log('Selected Health Count:', selectedHealthCount);
   };
+  // console.log('total items selected', selectedTechCount + selectedHealthCount);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleSelectCategory = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const Languages = ['Hindi', 'English', 'Bengali'];
+
   const handleClick = () => {
     if (popup1) {
       setPopup1(false);
       setPopup2(true);
+      setCurrentPopup('popup2');
     } else if (popup2) {
       setPopup2(false);
       setPopup3(true);
+      setCurrentPopup('popup3');
     } else if (popup3) {
       setPopup1(false);
       setPopup2(false);
@@ -75,7 +96,7 @@ const Popup = () => {
   return (
     <>
       {Modal && (
-        <div className=" bg-gray-900 bg-opacity-30  fixed top-0 left-0 w-full h-full flex items-center justify-center">
+        <div className=" bg-gray-900 bg-opacity-30  fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
           <div className="  w-1/2 h-5/6  flex flex-col justify-between  gap-4 bg-white rounded-3xl p-7 z-50">
             {popup1 && (
               <div className="flex flex-col gap-2">
@@ -97,10 +118,10 @@ const Popup = () => {
                   <div className="flex whitespace-nowrap gap-x-3 gap-y-4">
                     {row1.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectTech(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectTech(item, !selectedTech.includes(item))
                         }
-                        checked={selectedTech.includes(item)}
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -109,10 +130,10 @@ const Popup = () => {
                   <div className="flex items-center justify-start whitespace-nowrap gap-x-3 gap-y-4">
                     {row2.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectTech(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectTech(item, !selectedTech.includes(item))
                         }
-                        checked={selectedTech.includes(item)}
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -126,10 +147,13 @@ const Popup = () => {
                   <div className="flex whitespace-nowrap gap-x-3 gap-y-4">
                     {row1health.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectHealth(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectHealth(
+                            item,
+                            !selectedHealth.includes(item)
+                          )
                         }
-                        checked={selectedHealth.includes(item)}
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -138,10 +162,13 @@ const Popup = () => {
                   <div className="flex items-center justify-start whitespace-nowrap gap-x-3 gap-y-4">
                     {row2health.map((item, index) => (
                       <div
-                        onChange={(e) =>
-                          handleSelectHealth(item, e.target.checked)
+                        onClick={() =>
+                          handleSelectHealth(
+                            item,
+                            !selectedHealth.includes(item)
+                          )
                         }
-                        checked={selectedHealth.includes(item)}
+                        key={index}
                       >
                         <PopupCategory category={item} key={index} />
                       </div>
@@ -165,9 +192,17 @@ const Popup = () => {
                 </div>
                 <Text style="slider-props" label="Technology" />
                 <div className="flex gap-4">
-                  <PopupCategory category="Hindi" />{' '}
-                  <PopupCategory category="English" />{' '}
-                  <PopupCategory category="Bengali" />
+                  {Languages.map((category, index) => (
+                    <div
+                      key={index}
+                      onClick={() => handleSelectCategory(category)}
+                    >
+                      <Chiplanguage
+                        category={category}
+                        isselected={category === selectedCategory}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -188,18 +223,10 @@ const Popup = () => {
                   />
                 </div>
                 <div className="overflow-y-auto scrollbar h-1/3">
-                  {' '}
                   <FollowSuggestion
                     label1={'User'}
                     label2={'User Profession'}
                     style={'follow'}
-                    gap={'gap-72'}
-                  />
-                  <FollowSuggestion
-                    label1={'User1'}
-                    label2={'User Profession'}
-                    style={'follow'}
-                    gap={'gap-72'}
                   />
                 </div>
               </div>
@@ -209,9 +236,18 @@ const Popup = () => {
               label="Next"
               className="w-full"
               onClick={handleClick}
-              // disabled={
-              //   selectedTech.length === 0 || selectedHealth.length === 0
-              // }
+              disabled={
+                (currentPopup === 'popup1' &&
+                  selectedTechCount + selectedHealthCount < 5) ||
+                (currentPopup === 'popup2' && selectedCategory === null)
+              }
+              style={
+                (currentPopup === 'popup1' &&
+                  selectedTechCount + selectedHealthCount < 5) ||
+                (currentPopup === 'popup2' && selectedCategory === null)
+                  ? 'btnInactive'
+                  : 'btnActive'
+              }
             />
           </div>
         </div>

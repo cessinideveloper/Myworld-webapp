@@ -7,7 +7,7 @@ import ic_user_defolt_avator from 'shared/assets/ic_user_defolt_avator.svg'
 const StreamFollowCard = ({imgSrc, name}) => {
   return (
     <div className='flex items-center gap-3 py-2'>
-      <Image src={imgSrc} width={20} height={20} alt='user'/>
+      {imgSrc && <Image src={imgSrc} width={40} height={40} alt='user'/>}
       <Text label={name} style='myspace-name'/>
       <Text label='Follow' style='follow-text1'/>
     </div>

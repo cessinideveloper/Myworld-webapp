@@ -20,6 +20,7 @@ const LoginModal = ({ img1, img2, img3 }) => {
               height={6}
               className="w-6 h-6"
               onClick={handleClick}
+              alt='image'
             />
 
             <Image
@@ -27,6 +28,7 @@ const LoginModal = ({ img1, img2, img3 }) => {
               width={10}
               height={10}
               className="w-10 h-10 rounded-xl"
+              alt='image'
             />
             <Text style="room-text" label="Don't Miss Hub Conversation" />
             <Text
