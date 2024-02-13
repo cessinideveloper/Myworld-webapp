@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Button from 'shared/components/atoms/Button';
 const MyspaceCard = ({ img1, img2, img3 }) => {
   return (
-    <div className=" flex flex-col gap-3 justify-center items-center border rounded-xl border-gray-300 py-2 px-4 w-[15vw]">
+    <div className=" flex flex-col gap-3 justify-center items-center border rounded-xl border-gray-300 py-2 px-4 w-[190px]">
       <div className="text-left flex flex-col gap-2">
         <Text
           style="slider-props"
