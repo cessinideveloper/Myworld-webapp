@@ -1,11 +1,21 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Text from 'shared/components/atoms/Text';
 import Button from 'shared/components/atoms/Button';
 import PopupCategory from 'shared/components/atoms/PopupCategory';
 import FollowSuggestion from '../molecules/FollowSuggestion';
 import Chiplanguage from 'shared/components/atoms/chiplanguage';
+import { selectPopupData } from 'shared/Featured/slices/popUp.slice';
 const Popup = () => {
+  const popUpSelect = useSelector(selectPopupData);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    if (popUpSelect) {
+      setData(popUpSelect);
+    }
+  }, [popUpSelect]);
+  console.log('Data:', data);
   const technologyarr = [
     'Artificial intelligence & machine learning',
     'Chatgpt',

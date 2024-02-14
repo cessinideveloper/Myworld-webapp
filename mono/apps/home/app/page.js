@@ -8,18 +8,22 @@ import Header from 'shared/components/molecules/Header';
 import PopUp from 'shared/components/Organism/PopUp';
 import SplashScreen from 'shared/components/Organism/SplashScreen';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectPopupData } from 'shared/Featured/slices/popUp.slice';
 export default function Index() {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
   useEffect(() => {
-    let timer = setTimeout(() => {
-      setShow(true);
-    }, 3000);
-    return () => {
-      clearTimeout(timer);
-    };
+    dispatch({ type: 'POP_UP_FETCH_REQUESTED' });
   }, []);
-  if (!show) {
-    return <SplashScreen />;
+  const popUpselector = useSelector(selectPopupData)
+  useEffect(() => {
+    if (popUpselector?.video?.message==='Success') {
+      setShow(true);
+    }
+  }, [popUpselector]);
+  if(!show){
+    return <SplashScreen />
   }
   return (
     <div className="relative w-[100%]">

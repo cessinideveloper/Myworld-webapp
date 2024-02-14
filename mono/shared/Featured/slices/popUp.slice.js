@@ -12,10 +12,12 @@ const popUpSlice = createSlice({
         setPopupData: (state, action) => {
             state.data = action.payload;
         },
-        setLoading: (state, action) => {
+        setPopupLoading: (state, action) => {
             state.loading = action.payload;
         },
     },
 });
-export const {setPopupData, setLoading} = popUpSlice.actions;
+export const {setPopupData, setPopupLoading} = popUpSlice.actions;
+export const selectPopupData = (state) => state.popUp.data;
+export const selectLoading = (state) => state.popUp.loading;
 export default popUpSlice.reducer;
