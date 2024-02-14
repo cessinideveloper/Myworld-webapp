@@ -222,7 +222,7 @@ const Popup = () => {
                     label="in any language you choose"
                   />
                 </div>
-                <div className="overflow-y-auto scrollbar h-1/3">
+                <div className="overflow-y-auto scrollbar">
                   <FollowSuggestion
                     label1={'User'}
                     label2={'User Profession'}

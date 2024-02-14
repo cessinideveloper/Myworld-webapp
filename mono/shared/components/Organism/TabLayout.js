@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 const TabLayout = ({
-  tabs = [],
-  tabContent = [],
+  tabs,
+  tabContent,
   flexStyle,
   flexStyle1,
   tabcontentStyle,
@@ -31,7 +31,7 @@ const TabLayout = ({
       </div>
       {tabShown.map((data) => {
         return (
-          <div className={`h-[500px] ${tabcontentStyle}  `}>{data.content}</div>
+          <div className={` ${tabcontentStyle}  `}>{data.content}</div>
         );
       })}
     </div>
