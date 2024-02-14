@@ -7,6 +7,7 @@ import SignUp from 'shared/components/Organism/SignUp';
 import Header from 'shared/components/molecules/Header';
 import PopUp from 'shared/components/Organism/PopUp';
 import SplashScreen from 'shared/components/Organism/SplashScreen';
+import SaveDeviceIdLocalstorage from 'shared/utils/SaveDeviceIdLocalstorage';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPopupData } from 'shared/Featured/slices/popUp.slice';
@@ -27,6 +28,7 @@ export default function Index() {
   }
   return (
     <div className="relative w-[100%]">
+      <SaveDeviceIdLocalstorage/>
       <div className="z-[100]">
         <PopUp />
       </div>

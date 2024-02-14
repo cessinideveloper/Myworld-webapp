@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import Text from 'shared/components/atoms/Text';
+
 const DoubleCard = ({ img1, img2 }) => {
+  console.log('width', (1260 / 100) * 14);
   return (
-    <div className="flex flex-wrap w-[14vw] ">
+    <div className="flex flex-wrap w-[175px] ">
       <div className="p-2 gap-1 border-2 border-red-400 rounded-full justify-center inline-flex">
         <Image
           src={img1}
