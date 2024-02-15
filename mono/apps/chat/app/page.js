@@ -34,9 +34,6 @@ export default async function Index() {
           </div>
           <div className="h-[80%] ">
             <Message text={'hello, how are you?'} isSent />
-            <Message text={'I am fine'} />
-            <Message text={'What about you?'} />
-            <Message text={'I am fine as well'} isSent />
           </div>
           <div className="h-[10%] border-t flex px-5 py-3">
             <div>record icon</div>
