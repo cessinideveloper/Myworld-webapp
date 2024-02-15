@@ -11,6 +11,7 @@ import SaveDeviceIdLocalstorage from 'shared/utils/SaveDeviceIdLocalstorage';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPopupData } from 'shared/Featured/slices/popUp.slice';
+
 export default function Index() {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
