@@ -9,7 +9,7 @@ const SliderComponent = ({child}) => {
 
   const handleRightButtonClick = () => {
     const container = containerRef.current;
-    const scrollAmount = 228;
+    const scrollAmount = 500;
     container.scrollTo({
         left: container.scrollLeft + scrollAmount,
         behavior: 'smooth',
@@ -20,9 +20,7 @@ const SliderComponent = ({child}) => {
     <>
     <div className='relative'>
       <div className='contain flex mt-5 overflow-x-auto relative' ref={containerRef}>
-      {[1, 1, 1, 1, 1, 1, 1, 1, 1].map((slide) => (
-        <div key={slide.img} className='mr-8'>{child}</div>
-      ))}
+        <div className='mr-8 flex'>{child}</div>
       </div>
       <Image src={backarrowright} height={40} width={40} onClick={handleRightButtonClick} alt='Next arrow' className='absolute top-1/2 right-0 z-10 cursor-pointer bg-gray-300 rounded-full p-2'/>
     </div>
