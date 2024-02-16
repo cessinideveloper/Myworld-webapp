@@ -7,10 +7,8 @@ function* fetchPopUp() {
     yield put(setPopupLoading(true)); // Dispatch loading action
 
     const response1 = yield call(axios.get, 'https://others.joinmyworld.live/cat/video');
-    // console.log('response1', response1.data);
 
     const response2 = yield call(axios.get, 'https://others.joinmyworld.live/cat/sub/');
-    // console.log('response2', response2.data);
 
     yield put(setPopupData({ video: response1.data, sub: response2.data })); // Dispatch data action
     yield put(setPopupLoading(false)); // Dispatch loading action

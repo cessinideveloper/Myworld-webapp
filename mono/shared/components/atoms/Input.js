@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const styleClassess = {
   default: 'bg-gray-200 w-full px-8 py-3 rounded-full',
   home: 'bg-gray-200 w-[100%] px-8 py-3 rounded-full',
-  explore: 'bg-gray-200 w-[85%] px-8 py-3 rounded-full',
+  explore: 'bg-gray-200 w-full px-8 py-3 rounded-full',
   addthumbnail:
     'bg-white w-[100%] px-8 py-3 rounded-full border-4 border-gray-100',
   'thumbnail-text':
