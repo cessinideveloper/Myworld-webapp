@@ -16,20 +16,20 @@ export default function Index() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: 'POP_UP_FETCH_REQUESTED' });
-  }, []);
-  const popUpselector = useSelector(selectPopupData)
+  }, [dispatch]);
+  const popUpselector = useSelector(selectPopupData);
   useEffect(() => {
-    if (popUpselector?.video?.message==='Success') {
+    if (popUpselector?.video?.message === 'Success') {
       setShow(true);
     }
   }, [popUpselector]);
-  if(!show){
-    return <SplashScreen />
+  if (!show) {
+    return <SplashScreen />;
   }
   return (
     <div className="relative w-[100%]">
-      <SaveDeviceIdLocalstorage/>
-      <div className="z-[100]">
+      <SaveDeviceIdLocalstorage />
+      <div className="z-[100] ">
         <PopUp />
       </div>
       <div className=" fixed left-0 top-0 h-full z-[-1]">
