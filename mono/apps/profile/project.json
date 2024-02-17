@@ -1,7 +1,7 @@
 {
-  "name": "practice",
+  "name": "profile",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/practice",
+  "sourceRoot": "apps/profile",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,11 +9,11 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/practice"
+        "outputPath": "dist/apps/profile"
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/practice"
+          "outputPath": "apps/profile"
         },
         "production": {}
       }
@@ -22,17 +22,17 @@
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "practice:build",
+        "buildTarget": "profile:build",
         "dev": true,
         "port": 3005
       },
       "configurations": {
         "development": {
-          "buildTarget": "practice:build:development",
+          "buildTarget": "profile:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "practice:build:production",
+          "buildTarget": "profile:build:production",
           "dev": false
         }
       }
@@ -40,14 +40,14 @@
     "export": {
       "executor": "@nx/next:export",
       "options": {
-        "buildTarget": "practice:build:production"
+        "buildTarget": "profile:build:production"
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/practice/jest.config.js"
+        "jestConfig": "apps/profile/jest.config.js"
       }
     },
     "lint": {

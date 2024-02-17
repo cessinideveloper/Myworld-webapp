@@ -7,6 +7,7 @@ import PopupCategory from 'shared/components/atoms/PopupCategory';
 import FollowSuggestion from '../molecules/FollowSuggestion';
 import Chiplanguage from 'shared/components/atoms/chiplanguage';
 import { selectPopupData } from 'shared/Featured/slices/popUp.slice';
+import axios from 'axios';
 const Popup = () => {
   const popUpSelect = useSelector(selectPopupData);
   const [matchedPairs, setMatchedPairs] = useState([]);
@@ -28,7 +29,6 @@ const Popup = () => {
     // Iterate over properties of subData
     for (const key in subData) {
       const arr1 = subData[key]; // Get the array for the current property
-      console.log('arr1', arr1);
 
       // Iterate over arr1
       for (let i = 0; i < arr1.length; i++) {
@@ -86,15 +86,57 @@ const Popup = () => {
   };
 
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
+  const [preferenceCategory, setPreferenceCategory] = useState([]);
+  const [preferenceSubCategory, setPreferenceSubCategory] = useState([]);
 
   // Add this function
-  const handleSelectItem = (isChecked) => {
+  const handleSelectItem = (isChecked, category, subCategory) => {
     if (isChecked) {
       setSelectedItemsCount((prevCount) => prevCount + 1);
+      setPreferenceCategory((prevCategories) => [...prevCategories, category]);
+      setPreferenceSubCategory((prevsubcatagories) => [
+        ...prevsubcatagories,
+        subCategory,
+      ]);
     } else {
       setSelectedItemsCount((prevCount) => prevCount - 1);
+      setPreferenceCategory((prevCategories) =>
+        prevCategories.filter((cat) => cat !== category)
+      );
+      setPreferenceSubCategory((prevsubcatagories) =>
+        prevsubcatagories.filter((subcat) => subcat !== subCategory)
+      );
     }
   };
+
+  // useEffect(() => {
+  //   console.log('preferenceCategory', preferenceCategory);
+  //   console.log('preferenceSubCategory', preferenceSubCategory);
+  // }, [preferenceCategory, preferenceSubCategory]);
+  const url = 'https://others.joinmyworld.live/cat/user';
+  let id;
+  if (typeof window !== 'undefined') {
+    id = localStorage.getItem('deviceId');
+  }
+
+  useEffect(() => {
+    const postData = async () => {
+      try {
+        const response = await axios.post(url, {
+          body: {
+            device_id: id,
+            categories: preferenceCategory,
+            sub_categories: preferenceSubCategory,
+          },
+        });
+        const data = await response.data;
+        console.log(data);
+      } catch (error) {
+        console.log('Error ocurred here', error);
+      }
+    };
+    postData();
+  }, [preferenceCategory, preferenceSubCategory]);
 
   return (
     <>
@@ -139,7 +181,11 @@ const Popup = () => {
                               key={index}
                               className={'whitespace-nowrap'}
                               onClick={(isChecked) =>
-                                handleSelectItem(isChecked)
+                                handleSelectItem(
+                                  isChecked,
+                                  pairs[0].item2.category,
+                                  pair.item1.sub_category
+                                )
                               }
                             />
                           ))}
@@ -151,7 +197,11 @@ const Popup = () => {
                               key={index}
                               className={'whitespace-nowrap'}
                               onClick={(isChecked) =>
-                                handleSelectItem(isChecked)
+                                handleSelectItem(
+                                  isChecked,
+                                  pairs[0].item2.category,
+                                  pair.item1.sub_category
+                                )
                               }
                             />
                           ))}
@@ -191,7 +241,7 @@ const Popup = () => {
                 <div className=" h-[70%]">
                   {' '}
                   <Text style="slider-props" label="Technology" />
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 mt-3">
                     {Languages.map((category, index) => (
                       <div
                         key={index}
@@ -205,7 +255,6 @@ const Popup = () => {
                     ))}
                   </div>
                 </div>
-
                 <Button
                   label="Next"
                   className="w-full h-[10%]"

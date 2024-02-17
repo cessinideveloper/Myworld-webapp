@@ -39,7 +39,6 @@ const ManageProfile = () => {
           className="w-20 h-20 rounded-full object-cover"
         />
         <div>
-          {/* <Button style={'secondary'} label="Change" /> */}
           <input
             type="file"
             onChange={handleImageChange}

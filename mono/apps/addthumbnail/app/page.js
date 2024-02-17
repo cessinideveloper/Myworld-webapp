@@ -1,10 +1,23 @@
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Input from 'shared/components/atoms/Input';
-import Text from 'shared/components/atoms/Text';
+// import Text from 'shared/components/atoms/Text';
 import Sidebar from 'shared/components/Organism/Sidebar';
 import EnableDiscovery from 'shared/components/molecules/EnableDiscovery';
 import ImageButton from 'shared/components/molecules/ImageButton';
-export default async function Index() {
+
+export default function Index() {
+  const [image, setImage] = useState('');
+  const handleImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+      reader.onload = (event) => {
+        setImage(event.target.result);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  };
   return (
     <div className="relative pb-10">
       <div className=" fixed left-0 top-0 h-full z-[-1] w-[7vw]">
@@ -30,21 +43,41 @@ export default async function Index() {
           />
         </div>
         {/* body */}
-        <div className=" w-[80%] border-r pl-10 flex items-center justify-center gap-10">
-          <div className=" bg-gray-100 h-[70vh] rounded-3xl p-5 flex justify-center items-center text-center w-[40%]">
-            <Text label="Drag and drop or click to upload" />
+        <div className=" my-10 mx-10 rounded-md flex flex-col gap-5 shadow-md w-[80%]">
+          {' '}
+          <div className=" pl-10  flex items-center justify-center gap-10">
+            <div className=" relative bg-gray-100 border-none  h-[70vh] rounded-3xl p-5 flex justify-center items-center text-center w-[40%]">
+              <Image
+                src={image}
+                alt=""
+                layout="fill"
+                objectFit="cover"
+                className=" absolute object-cover rounded-3xl"
+              />
+              <input
+                type="file"
+                onChange={handleImageChange}
+                style={{ display: 'none' }}
+                id="fileInput"
+              />
+              <label
+                htmlFor="fileInput"
+                className="z-20 relative text-xl text-gray-400 font-bold"
+              >
+                Drag and drop or click to upload
+              </label>
+            </div>
+            <div className="w-[50%] flex flex-col gap-5">
+              <Input style={'thumbnail-text'} hint="Add Title" />
+              <Input style={'thumbnail-text'} hint="Add Description" />
+              <Input style={'thumbnail-text'} hint="Add Category" />
+              <EnableDiscovery />
+            </div>
           </div>
-          <div className="w-[50%] flex flex-col gap-5">
-            {/* <Text label='' style='create1 room'/> */}
-            <Input style={'thumbnail-text'} hint="Add Title" />
-            <Input style={'thumbnail-text'} hint="Add Title" />
-            <Input style={'thumbnail-text'} hint="Add Title" />
-            <EnableDiscovery />
+          {/* footer */}
+          <div className="w-[80%] pl-16 pb-10">
+            <ImageButton text={'Add your own thumbnail'} />
           </div>
-        </div>
-        {/* footer */}
-        <div className="w-[80%] pl-16">
-          <ImageButton text={'Add your own thumbnail'} />
         </div>
       </div>
     </div>
