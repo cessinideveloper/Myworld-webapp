@@ -24,6 +24,8 @@ const styleClassess = {
   'create-text3': 'text-xl font-bold text-blue-400',
   'section-following': 'text-xs font-semibold',
   'create-hub': 'text-[20px] font-bold text-blue-500',
+  'mainslider-title': 'text-3xl font-bold text-center',
+  'mainslider-desc': 'text-xl font-semibold text-center text-gray-700'
 };
 const Text = ({ label, style }) => {
   const textClasses = `${styleClassess[style]}`;
