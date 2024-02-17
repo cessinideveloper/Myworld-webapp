@@ -26,7 +26,6 @@ export default function Index() {
     dispatch({ type: 'EXPLORE_FETCH_REQUESTED' });
     setShowSplashScreen(false);
   }, []);
-  console.log('explore data : ', exploreData);
   return showSplashScreen ? (
     <SplashScreen />
   ) : (
