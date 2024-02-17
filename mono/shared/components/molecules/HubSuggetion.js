@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Text from 'shared/components/atoms/Text';
 import Tag from 'shared/components/atoms/Tag';
 import Button from 'shared/components/atoms/Button';
-const HubSuggetion = () => {
+const HubSuggetion = ({isLive=false}) => {
   return (
-    <div className="">
+    <div>
       
       <div className="flex gap-2">
         <div className="flex flex-col gap-0">
@@ -26,6 +26,9 @@ const HubSuggetion = () => {
           />
         </div>
         <div className="w-[20vw] flex flex-col justify-center">
+        {isLive &&<Text
+        style='live'
+          label="Live"/>}
           <Text
             style="follow-text1"
             label="Foundation of Youth Ending Explained | 7 Guardians of the Tomb 2020 Explained in hindi"

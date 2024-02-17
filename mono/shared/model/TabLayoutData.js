@@ -4,6 +4,7 @@ import Notification from '../components/molecules/Notification';
 import Security from '../components/molecules/Security';
 import UserProfile from 'shared/components/molecules/UserProfile';
 import HubCard from 'shared/components/molecules/HubCard';
+import HubSuggetion from '../components/molecules/HubSuggetion';
 export const tabsData = [
   {
     id: 1,
@@ -89,9 +90,9 @@ export const searchTabContent = [
   {
     id: 1,
     content: [
-      <UserProfile key={1} label1={'rahul rj'} label2={'Rahul RJ'} />,
-      <UserProfile key={2} label1={'tarun kumar'} label2={'Tarun Kumar'} />,
-      <UserProfile key={3} label1={'riya roy'} label2={'Roiya Roy'} />,
+      <HubSuggetion key={1} isLive={true}/>,
+      <HubSuggetion key={2} isLive={true}/>,
+      <HubSuggetion key={3} isLive={true}/>,      
     ],
   },
   {
