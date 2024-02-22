@@ -19,6 +19,7 @@ import { selectExploreData } from 'shared/Featured/slices/explore.slice';
 import { useState, useEffect } from 'react';
 
 export default function Index() {
+  //This is explore page
   const [showSplashScreen, setShowSplashScreen] = useState(true);
   const exploreData = useSelector(selectExploreData);
   const dispatch = useDispatch();
